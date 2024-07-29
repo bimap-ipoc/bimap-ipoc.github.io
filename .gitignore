@@ -1,0 +1,15 @@
+# Binaries for programs and plugins
+*/.DS_Store
+.DS_Store
+main
+
+#ide setting
+.idea
+*.csv
+.vscode
+
+/_book/
+/node_modules/
+/book.pdf
+/book.mobi
+/book.epub
