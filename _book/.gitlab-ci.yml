@@ -1,0 +1,14 @@
+image: node:latest
+
+before_script:
+  - npm install gitbook-cli -g
+
+pages:
+  script:
+    - gitbook install
+    - gitbook build
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
