@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="Filesystem.html" />
     
-    <link rel="prev" href="Filesystem.html" />
+    
+    <link rel="prev" href="MultiCPU.html" />
     
 
     </head>
@@ -341,12 +343,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.6" data-path="Filesystem.html">
+        <li class="chapter active" data-level="1.5.2.6" data-path="Process.html">
             
-                <a href="Filesystem.html">
+                <a href="Process.html">
             
                     
-                    Filesystem
+                    Process
             
                 </a>
             
@@ -354,12 +356,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.2.7" data-path="Process.html">
+        <li class="chapter " data-level="1.5.2.7" data-path="Filesystem.html">
             
-                <a href="Process.html">
+                <a href="Filesystem.html">
             
                     
-                    Process
+                    Filesystem
             
                 </a>
             
@@ -483,14 +485,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.4" >
+        <li class="chapter " data-level="1.5.4.4" data-path="../告警管理/通知管道/REMDME.html">
             
-                <span>
+                <a href="../告警管理/通知管道/REMDME.html">
             
                     
                     通知管道
             
-                </span>
+                </a>
             
 
             
@@ -847,7 +849,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;process-&#x9801;&#x9762;">&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;Process &#x9801;&#x9762;</h1>
+                                <h3 id="&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;process-&#x9801;&#x9762;">&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;Process &#x9801;&#x9762;</h3>
 <h4 id="&#x9801;&#x9762;&#x4ECB;&#x7D39;">&#x9801;&#x9762;&#x4ECB;&#x7D39;</h4>
 <p>Process &#x9801;&#x9762;&#x5C55;&#x793A;&#x7CFB;&#x7D71;&#x4E2D;&#x5404;&#x500B;&#x9032;&#x7A0B;&#x7684; CPU &#x548C;&#x5167;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x3002;&#x7528;&#x6236;&#x53EF;&#x4EE5;&#x6839;&#x64DA;&#x9032;&#x7A0B;&#x540D;&#x7A31;&#x548C;&#x4F7F;&#x7528;&#x7387;&#x6392;&#x5E8F;&#xFF0C;&#x67E5;&#x770B;&#x8CC7;&#x6E90;&#x6D88;&#x8017;&#x8F03;&#x5927;&#x7684;&#x9032;&#x7A0B;&#x3002;</p>
 <h4 id="&#x64CD;&#x4F5C;&#x8AAA;&#x660E;">&#x64CD;&#x4F5C;&#x8AAA;&#x660E;</h4>
@@ -860,6 +862,16 @@
 <ul>
 <li><strong>CPU &#x4F7F;&#x7528;&#x7387;</strong>&#xFF1A;&#x986F;&#x793A;&#x9032;&#x7A0B;&#x7684; CPU &#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x3002;</li>
 <li><strong>&#x5167;&#x5B58;&#x4F7F;&#x7528;&#x7387;</strong>&#xFF1A;&#x986F;&#x793A;&#x9032;&#x7A0B;&#x7684;&#x5167;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x3002;</li>
+</ul>
+<h4 id="&#x5716;&#x7247;&#x8AAA;&#x660E;">&#x5716;&#x7247;&#x8AAA;&#x660E;</h4>
+<p><img src="../../images/iPOC&#x9801;&#x9762;_&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;-Process-&#x55AE;&#x7BC0;&#x9EDE;&#x5206;&#x6790;.jpg" alt="Process &#x55AE;&#x7BC0;&#x9EDE;&#x5206;&#x6790;">
+&#x5716;1&#xFF1A;Process &#x55AE;&#x7BC0;&#x9EDE;&#x5206;&#x6790;&#x9801;&#x9762;&#xFF0C;&#x5C55;&#x793A;&#x9078;&#x5B9A;&#x4E3B;&#x6A5F;&#x7684;&#x9032;&#x7A0B; CPU &#x548C;&#x5167;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x3002;</p>
+<ul>
+<li><strong>Group</strong>&#xFF1A;&#x9078;&#x64C7;&#x8981;&#x5206;&#x6790;&#x7684;&#x7FA4;&#x7D44;&#x3002;</li>
+<li><strong>Hostname</strong>&#xFF1A;&#x9078;&#x64C7;&#x8981;&#x5206;&#x6790;&#x7684;&#x4E3B;&#x6A5F;&#x540D;&#x7A31;&#x3002;</li>
+<li><strong>Sort</strong>&#xFF1A;&#x9078;&#x64C7;&#x6392;&#x5E8F;&#x65B9;&#x5F0F;&#xFF08;&#x5982; runtime&#x3001;cpu_usage&#x3001;avg&#xFF09;&#x3002;</li>
+<li><strong>TOP N</strong>&#xFF1A;&#x9078;&#x64C7;&#x986F;&#x793A;&#x8CC7;&#x6E90;&#x4F7F;&#x7528;&#x6700;&#x9AD8;&#x7684; N &#x500B;&#x9032;&#x7A0B;&#x3002;</li>
+<li><strong>&#x65E5;&#x671F;&#x9078;&#x64C7;&#x5668;</strong>&#xFF1A;&#x9078;&#x64C7;&#x8981;&#x5206;&#x6790;&#x7684;&#x65E5;&#x671F;&#x7BC4;&#x570D;&#x3002;</li>
 </ul>
 
                                 
@@ -888,10 +900,14 @@
 
             
                 
-                <a href="Filesystem.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Filesystem">
+                <a href="MultiCPU.html" class="navigation navigation-prev " aria-label="Previous page: MultiCPU">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="Filesystem.html" class="navigation navigation-next " aria-label="Next page: Filesystem">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -900,7 +916,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Process","level":"1.5.2.7","depth":3,"next":{"title":"指標自選區","level":"1.5.3","depth":2,"ref":"","articles":[{"title":"RawData","level":"1.5.3.1","depth":3,"path":"guide/操作指南/指標自選區/RawData.md","ref":"guide/操作指南/指標自選區/RawData.md","articles":[]},{"title":"定義KPI指標","level":"1.5.3.2","depth":3,"path":"guide/操作指南/指標自選區/定義KPI指標.md","ref":"guide/操作指南/指標自選區/定義KPI指標.md","articles":[]},{"title":"定義儀表板","level":"1.5.3.3","depth":3,"path":"guide/操作指南/指標自選區/定義儀表板.md","ref":"guide/操作指南/指標自選區/定義儀表板.md","articles":[]}]},"previous":{"title":"Filesystem","level":"1.5.2.6","depth":3,"path":"guide/操作指南/系統關聯分析/Filesystem.md","ref":"guide/操作指南/系統關聯分析/Filesystem.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/操作指南/系統關聯分析/Process.md","mtime":"2024-08-01T11:16:58.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-01T11:17:16.748Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Process","level":"1.5.2.6","depth":3,"next":{"title":"Filesystem","level":"1.5.2.7","depth":3,"path":"guide/操作指南/系統關聯分析/Filesystem.md","ref":"guide/操作指南/系統關聯分析/Filesystem.md","articles":[]},"previous":{"title":"MultiCPU","level":"1.5.2.5","depth":3,"path":"guide/操作指南/系統關聯分析/MultiCPU.md","ref":"guide/操作指南/系統關聯分析/MultiCPU.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/操作指南/系統關聯分析/Process.md","mtime":"2024-08-01T16:12:05.670Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-01T16:49:55.480Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

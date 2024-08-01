@@ -343,12 +343,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.6" data-path="Filesystem.html">
+        <li class="chapter " data-level="1.5.2.6" data-path="Process.html">
             
-                <a href="Filesystem.html">
+                <a href="Process.html">
             
                     
-                    Filesystem
+                    Process
             
                 </a>
             
@@ -356,12 +356,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.7" data-path="Process.html">
+        <li class="chapter " data-level="1.5.2.7" data-path="Filesystem.html">
             
-                <a href="Process.html">
+                <a href="Filesystem.html">
             
                     
-                    Process
+                    Filesystem
             
                 </a>
             
@@ -485,14 +485,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.4" >
+        <li class="chapter " data-level="1.5.4.4" data-path="../告警管理/通知管道/REMDME.html">
             
-                <span>
+                <a href="../告警管理/通知管道/REMDME.html">
             
                     
                     通知管道
             
-                </span>
+                </a>
             
 
             
@@ -851,7 +851,7 @@
                                 
                                 <h1 id="&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;diskload-&#x9801;&#x9762;">&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;Diskload &#x9801;&#x9762;</h1>
 <h4 id="&#x9801;&#x9762;&#x4ECB;&#x7D39;">&#x9801;&#x9762;&#x4ECB;&#x7D39;</h4>
-<p>Diskload &#x9801;&#x9762;&#x986F;&#x793A;&#x78C1;&#x789F;&#x8CA0;&#x8F09;&#x7684;&#x76F8;&#x95DC;&#x6307;&#x6A19;&#xFF0C;&#x5E6B;&#x52A9;&#x7528;&#x6236;&#x4E86;&#x89E3;&#x78C1;&#x789F;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#xFF0C;&#x512A;&#x5316;&#x7CFB;&#x7D71;&#x6027;&#x80FD;&#x3002;&#x4E3B;&#x8981;&#x6307;&#x6A19;&#x5305;&#x62EC;&#x5206;&#x5340;&#x4F7F;&#x7528;&#x7387;&#x3001;&#x5E36;&#x5BEC;&#x548C; IOPS&#xFF08;&#x6BCF;&#x79D2;&#x8F38;&#x5165;/&#x8F38;&#x51FA;&#x64CD;&#x4F5C;&#x6578;&#xFF09;&#x3002;</p>
+<p>Diskload &#x9801;&#x9762;&#x986F;&#x793A;&#x78C1;&#x789F;&#x8CA0;&#x8F09;&#x7684;&#x76F8;&#x95DC;&#x6307;&#x6A19;&#xFF0C;&#x5305;&#x62EC;&#x5404;&#x5206;&#x5340;&#x7684;&#x4F7F;&#x7528;&#x7387;&#x3001;&#x5E36;&#x5BEC;&#x548C; IOPS&#xFF08;&#x6BCF;&#x79D2;&#x8F38;&#x5165;/&#x8F38;&#x51FA;&#x64CD;&#x4F5C;&#x6578;&#xFF09;&#x7B49;&#x3002;&#x9019;&#x4E9B;&#x6307;&#x6A19;&#x6709;&#x52A9;&#x65BC;&#x7528;&#x6236;&#x4E86;&#x89E3;&#x78C1;&#x789F;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#xFF0C;&#x9032;&#x800C;&#x9032;&#x884C;&#x512A;&#x5316;&#x548C;&#x6545;&#x969C;&#x6392;&#x9664;&#x3002;</p>
 <h4 id="&#x64CD;&#x4F5C;&#x8AAA;&#x660E;">&#x64CD;&#x4F5C;&#x8AAA;&#x660E;</h4>
 <ol>
 <li>&#x9032;&#x5165; iPOC &#x7CFB;&#x7D71;&#x4E26;&#x9078;&#x64C7;&#x300C;&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#x300D;&#x4E2D;&#x7684;&#x300C;Diskload&#x300D;&#x9801;&#x9762;&#x3002;</li>
@@ -860,17 +860,16 @@
 </ol>
 <h4 id="&#x4E0B;&#x62C9;&#x9078;&#x9805;&#x7684;&#x6307;&#x6A19;&#x8AAA;&#x660E;">&#x4E0B;&#x62C9;&#x9078;&#x9805;&#x7684;&#x6307;&#x6A19;&#x8AAA;&#x660E;</h4>
 <ul>
-<li><strong>&#x5206;&#x5340;&#x4F7F;&#x7528;&#x7387;</strong>&#xFF1A;&#x986F;&#x793A;&#x5404;&#x5206;&#x5340;&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x3002;</li>
-<li><strong>&#x5E36;&#x5BEC;</strong>&#xFF1A;&#x986F;&#x793A;&#x78C1;&#x789F;&#x5E36;&#x5BEC;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x3002;</li>
-<li><strong>IOPS</strong>&#xFF1A;&#x986F;&#x793A;&#x6BCF;&#x79D2;&#x8F38;&#x5165;/&#x8F38;&#x51FA;&#x64CD;&#x4F5C;&#x6578;&#xFF0C;&#x53CD;&#x6620;&#x78C1;&#x789F;&#x7684;&#x6027;&#x80FD;&#x3002;</li>
+<li><strong>busy</strong>&#xFF1A;&#x986F;&#x793A;&#x78C1;&#x789F;&#x7684;&#x5FD9;&#x788C;&#x7A0B;&#x5EA6;&#xFF0C;&#x53CD;&#x6620;&#x78C1;&#x789F;&#x7684;&#x4F7F;&#x7528;&#x72C0;&#x614B;&#x548C;&#x7E41;&#x5FD9;&#x7A0B;&#x5EA6;&#x3002;</li>
+<li><strong>iops</strong>&#xFF1A;&#x986F;&#x793A;&#x6BCF;&#x79D2;&#x8F38;&#x5165;/&#x8F38;&#x51FA;&#x64CD;&#x4F5C;&#x6578;&#xFF0C;&#x53CD;&#x6620;&#x78C1;&#x789F;&#x7684;&#x6027;&#x80FD;&#x548C;&#x8655;&#x7406;&#x80FD;&#x529B;&#x3002;</li>
+<li><strong>bandwidth</strong>&#xFF1A;&#x986F;&#x793A;&#x78C1;&#x789F;&#x5E36;&#x5BEC;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#xFF0C;&#x53CD;&#x6620;&#x6578;&#x64DA;&#x50B3;&#x8F38;&#x7684;&#x6548;&#x7387;&#x3002;</li>
+<li><strong>queue</strong>&#xFF1A;&#x986F;&#x793A; I/O &#x64CD;&#x4F5C;&#x968A;&#x5217;&#x9577;&#x5EA6;&#xFF0C;&#x53CD;&#x6620;&#x7B49;&#x5F85;&#x8655;&#x7406;&#x7684; I/O &#x8ACB;&#x6C42;&#x6578;&#x91CF;&#x3002;</li>
 </ul>
 <h4 id="&#x5716;&#x7247;&#x8AAA;&#x660E;">&#x5716;&#x7247;&#x8AAA;&#x660E;</h4>
-<p><img src="../../images/iPOC&#x9801;&#x9762;_&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;-Diskload-Group&#x5206;&#x6790;.jpg" alt="Diskload Group &#x5206;&#x6790;">
-&#x5716;1&#xFF1A;Diskload Group &#x5206;&#x6790;&#x9801;&#x9762;&#xFF0C;&#x5C55;&#x793A;&#x4E86;&#x591A;&#x4E3B;&#x6A5F;&#x7684;&#x78C1;&#x789F;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x548C;&#x7D71;&#x8A08;&#x6578;&#x64DA;&#x3002;</p>
-<p><img src="../../images/iPOC&#x9801;&#x9762;_&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;-Diskload-History&#x5206;&#x6790;.jpg" alt="Diskload History &#x5206;&#x6790;">
-&#x5716;2&#xFF1A;Diskload History &#x5206;&#x6790;&#x9801;&#x9762;&#xFF0C;&#x5C55;&#x793A;&#x7279;&#x5B9A;&#x4E3B;&#x6A5F;&#x7684;&#x6B77;&#x53F2;&#x6578;&#x64DA;&#x5206;&#x6790;&#xFF0C;&#x5305;&#x542B;&#x591A;&#x7A2E;&#x6642;&#x9593;&#x7BC4;&#x570D;&#x548C;&#x5206;&#x65E5;&#x8DA8;&#x52E2;&#x5C0D;&#x6BD4;&#x3002;</p>
+<p><img src="../../images/iPOC&#x9801;&#x9762;_&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;-Diskload-Group&#x5206;&#x6790;.jpg" alt="Diskload &#x55AE;&#x7BC0;&#x9EDE;&#x5206;&#x6790;">
+&#x5716;1&#xFF1A;Diskload &#x55AE;&#x7BC0;&#x9EDE;&#x5206;&#x6790;&#x9801;&#x9762;&#xFF0C;&#x5C55;&#x793A;&#x4E86;&#x78C1;&#x789F;&#x7684;&#x5FD9;&#x788C;&#x7A0B;&#x5EA6;&#x3001;IOPS&#x3001;&#x5E36;&#x5BEC;&#x548C;&#x968A;&#x5217;&#x9577;&#x5EA6;&#x3002;</p>
 <p><img src="../../images/iPOC&#x9801;&#x9762;_&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;-Diskload-KPI&#x95DC;&#x806F;&#x5206;&#x6790;.jpg" alt="Diskload KPI &#x95DC;&#x806F;&#x5206;&#x6790;">
-&#x5716;3&#xFF1A;Diskload KPI &#x95DC;&#x806F;&#x5206;&#x6790;&#x9801;&#x9762;&#xFF0C;&#x5C08;&#x6CE8;&#x65BC;&#x95DC;&#x9375;&#x7E3E;&#x6548;&#x6307;&#x6A19;&#x7684;&#x6B77;&#x53F2;&#x8DA8;&#x52E2;&#x5716;&#xFF0C;&#x5E6B;&#x52A9;&#x7528;&#x6236;&#x767C;&#x73FE;&#x6F5B;&#x5728;&#x554F;&#x984C;&#x548C;&#x6027;&#x80FD;&#x74F6;&#x9838;&#x3002;</p>
+&#x5716;2&#xFF1A;Diskload KPI &#x95DC;&#x806F;&#x5206;&#x6790;&#x9801;&#x9762;&#xFF0C;&#x5C08;&#x6CE8;&#x65BC;&#x95DC;&#x9375;&#x7E3E;&#x6548;&#x6307;&#x6A19;&#x7684;&#x6B77;&#x53F2;&#x8DA8;&#x52E2;&#x5716;&#xFF0C;&#x5E6B;&#x52A9;&#x7528;&#x6236;&#x767C;&#x73FE;&#x6F5B;&#x5728;&#x554F;&#x984C;&#x548C;&#x6027;&#x80FD;&#x74F6;&#x9838;&#x3002;</p>
 <h4 id="&#x6CE8;&#x610F;&#x4E8B;&#x9805;">&#x6CE8;&#x610F;&#x4E8B;&#x9805;</h4>
 <ul>
 <li>&#x78BA;&#x4FDD;&#x6240;&#x9078;&#x6642;&#x9593;&#x6BB5;&#x5167;&#x6709;&#x8DB3;&#x5920;&#x7684;&#x6578;&#x64DA;&#xFF0C;&#x4EE5;&#x4FBF;&#x9032;&#x884C;&#x6709;&#x6548;&#x7684;&#x5206;&#x6790;&#x3002;</li>
@@ -919,7 +918,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Diskload","level":"1.5.2.2","depth":3,"next":{"title":"Netload","level":"1.5.2.3","depth":3,"path":"guide/操作指南/系統關聯分析/Netload.md","ref":"guide/操作指南/系統關聯分析/Netload.md","articles":[]},"previous":{"title":"Sysload","level":"1.5.2.1","depth":3,"path":"guide/操作指南/系統關聯分析/Sysload.md","ref":"guide/操作指南/系統關聯分析/Sysload.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/操作指南/系統關聯分析/Diskload.md","mtime":"2024-08-01T11:16:52.372Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-01T11:17:16.748Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Diskload","level":"1.5.2.2","depth":3,"next":{"title":"Netload","level":"1.5.2.3","depth":3,"path":"guide/操作指南/系統關聯分析/Netload.md","ref":"guide/操作指南/系統關聯分析/Netload.md","articles":[]},"previous":{"title":"Sysload","level":"1.5.2.1","depth":3,"path":"guide/操作指南/系統關聯分析/Sysload.md","ref":"guide/操作指南/系統關聯分析/Sysload.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/操作指南/系統關聯分析/Diskload.md","mtime":"2024-08-01T16:21:32.334Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-01T16:49:55.480Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

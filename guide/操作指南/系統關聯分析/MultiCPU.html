@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Filesystem.html" />
+    <link rel="next" href="Process.html" />
     
     
     <link rel="prev" href="Memory.html" />
@@ -343,12 +343,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.6" data-path="Filesystem.html">
+        <li class="chapter " data-level="1.5.2.6" data-path="Process.html">
             
-                <a href="Filesystem.html">
+                <a href="Process.html">
             
                     
-                    Filesystem
+                    Process
             
                 </a>
             
@@ -356,12 +356,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.7" data-path="Process.html">
+        <li class="chapter " data-level="1.5.2.7" data-path="Filesystem.html">
             
-                <a href="Process.html">
+                <a href="Filesystem.html">
             
                     
-                    Process
+                    Filesystem
             
                 </a>
             
@@ -485,14 +485,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.4" >
+        <li class="chapter " data-level="1.5.4.4" data-path="../告警管理/通知管道/REMDME.html">
             
-                <span>
+                <a href="../告警管理/通知管道/REMDME.html">
             
                     
                     通知管道
             
-                </span>
+                </a>
             
 
             
@@ -849,9 +849,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;multicpu-&#x9801;&#x9762;">&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;MultiCPU &#x9801;&#x9762;</h1>
+                                <h3 id="&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;multicpu-&#x9801;&#x9762;">&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#xFF1A;MultiCPU &#x9801;&#x9762;</h3>
 <h4 id="&#x9801;&#x9762;&#x4ECB;&#x7D39;">&#x9801;&#x9762;&#x4ECB;&#x7D39;</h4>
-<p>MultiCPU &#x9801;&#x9762;&#x986F;&#x793A;&#x591A;&#x6838; CPU &#x7684;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#xFF0C;&#x6BCF;&#x500B; CPU &#x6838;&#x5FC3;&#x7684;&#x4F7F;&#x7528;&#x7387;&#x5206;&#x5225;&#x986F;&#x793A;&#xFF0C;&#x4E26;&#x9644;&#x6709;&#x6B77;&#x53F2;&#x6578;&#x64DA;&#x8DA8;&#x52E2;&#x5716;&#x3002;</p>
+<p>MultiCPU &#x9801;&#x9762;&#x986F;&#x793A;&#x591A;&#x6838; CPU &#x7684;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#xFF0C;&#x6BCF;&#x500B; CPU &#x6838;&#x5FC3;&#x7684;&#x4F7F;&#x7528;&#x7387;&#x5206;&#x5225;&#x986F;&#x793A;&#xFF0C;&#x4E26;&#x9644;&#x6709;&#x6B77;&#x53F2;&#x6578;&#x64DA;&#x8DA8;&#x52E2;&#x5716;&#x3002;&#x9019;&#x4E9B;&#x6307;&#x6A19;&#x6709;&#x52A9;&#x65BC;&#x7528;&#x6236;&#x5206;&#x6790;&#x548C;&#x512A;&#x5316;&#x591A;&#x6838;&#x8655;&#x7406;&#x5668;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
 <h4 id="&#x64CD;&#x4F5C;&#x8AAA;&#x660E;">&#x64CD;&#x4F5C;&#x8AAA;&#x660E;</h4>
 <ol>
 <li>&#x9032;&#x5165; iPOC &#x7CFB;&#x7D71;&#x4E26;&#x9078;&#x64C7;&#x300C;&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;&#x300D;&#x4E2D;&#x7684;&#x300C;MultiCPU&#x300D;&#x9801;&#x9762;&#x3002;</li>
@@ -860,8 +860,22 @@
 </ol>
 <h4 id="&#x4E0B;&#x62C9;&#x9078;&#x9805;&#x7684;&#x6307;&#x6A19;&#x8AAA;&#x660E;">&#x4E0B;&#x62C9;&#x9078;&#x9805;&#x7684;&#x6307;&#x6A19;&#x8AAA;&#x660E;</h4>
 <ul>
-<li><strong>CPU &#x6838;&#x5FC3;&#x4F7F;&#x7528;&#x7387;</strong>&#xFF1A;&#x986F;&#x793A;&#x6BCF;&#x500B; CPU &#x6838;&#x5FC3;&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x3002;</li>
-<li><strong>&#x6B77;&#x53F2;&#x6578;&#x64DA;&#x8DA8;&#x52E2;&#x5716;</strong>&#xFF1A;&#x986F;&#x793A;&#x6BCF;&#x500B; CPU &#x6838;&#x5FC3;&#x7684;&#x6B77;&#x53F2;&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x3002;</li>
+<li><strong>usage</strong>&#xFF1A;&#x986F;&#x793A;&#x6BCF;&#x500B; CPU &#x6838;&#x5FC3;&#x7684;&#x7E3D;&#x4F7F;&#x7528;&#x7387;&#x3002;</li>
+<li><strong>user</strong>&#xFF1A;&#x986F;&#x793A;&#x7528;&#x6236;&#x6A21;&#x5F0F;&#x4E0B;&#x7684; CPU &#x4F7F;&#x7528;&#x7387;&#x3002;</li>
+<li><strong>system</strong>&#xFF1A;&#x986F;&#x793A;&#x7CFB;&#x7D71;&#x6A21;&#x5F0F;&#x4E0B;&#x7684; CPU &#x4F7F;&#x7528;&#x7387;&#x3002;</li>
+<li><strong>steal</strong>&#xFF1A;&#x986F;&#x793A;&#x88AB;&#x865B;&#x64EC;&#x5316;&#x74B0;&#x5883;&#x201C;&#x5077;&#x8D70;&#x201D;&#x7684; CPU &#x6642;&#x9593;&#x3002;</li>
+<li><strong>iowait</strong>&#xFF1A;&#x986F;&#x793A;&#x7B49;&#x5F85; I/O &#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x7684; CPU &#x6642;&#x9593;&#x3002;</li>
+<li><strong>nice</strong>&#xFF1A;&#x986F;&#x793A;&#x512A;&#x5148;&#x7D1A;&#x8ABF;&#x6574;&#x5F8C;&#x7684; CPU &#x4F7F;&#x7528;&#x7387;&#x3002;</li>
+</ul>
+<h4 id="&#x5716;&#x7247;&#x8AAA;&#x660E;">&#x5716;&#x7247;&#x8AAA;&#x660E;</h4>
+<p><img src="../../images/iPOC&#x9801;&#x9762;_&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;-Multicpu-&#x55AE;&#x7BC0;&#x9EDE;&#x5206;&#x6790;.jpg" alt="MultiCPU &#x55AE;&#x7BC0;&#x9EDE;&#x5206;&#x6790;">
+&#x5716;1&#xFF1A;MultiCPU &#x55AE;&#x7BC0;&#x9EDE;&#x5206;&#x6790;&#x9801;&#x9762;&#xFF0C;&#x5C55;&#x793A;&#x4E86;&#x591A;&#x4E3B;&#x6A5F;&#x7684; CPU &#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x548C;&#x7D71;&#x8A08;&#x6578;&#x64DA;&#x3002;</p>
+<p><img src="../../images/iPOC&#x9801;&#x9762;_&#x7CFB;&#x7D71;&#x95DC;&#x806F;&#x5206;&#x6790;-Multicpu-KPI&#x5206;&#x6790;.jpg" alt="MultiCPU KPI &#x5206;&#x6790;">
+&#x5716;2&#xFF1A;MultiCPU KPI &#x5206;&#x6790;&#x9801;&#x9762;&#xFF0C;&#x986F;&#x793A;&#x5404; CPU &#x6838;&#x5FC3;&#x7684;&#x4E0D;&#x540C;&#x6307;&#x6A19;&#xFF0C;&#x5E6B;&#x52A9;&#x7528;&#x6236;&#x767C;&#x73FE;&#x6027;&#x80FD;&#x74F6;&#x9838;&#x3002;</p>
+<h4 id="&#x6CE8;&#x610F;&#x4E8B;&#x9805;">&#x6CE8;&#x610F;&#x4E8B;&#x9805;</h4>
+<ul>
+<li>&#x78BA;&#x4FDD;&#x6240;&#x9078;&#x6642;&#x9593;&#x6BB5;&#x5167;&#x6709;&#x8DB3;&#x5920;&#x7684;&#x6578;&#x64DA;&#xFF0C;&#x4EE5;&#x4FBF;&#x9032;&#x884C;&#x6709;&#x6548;&#x7684;&#x5206;&#x6790;&#x3002;</li>
+<li>&#x6839;&#x64DA;&#x9700;&#x8981;&#x8ABF;&#x6574;&#x6642;&#x9593;&#x6BB5;&#x548C;&#x6307;&#x6A19;&#xFF0C;&#x4EE5;&#x7372;&#x5F97;&#x66F4;&#x591A;&#x8A73;&#x7D30;&#x7684;&#x4FE1;&#x606F;&#x548C;&#x6D1E;&#x898B;&#x3002;</li>
 </ul>
 
                                 
@@ -895,7 +909,7 @@
                 </a>
                 
                 
-                <a href="Filesystem.html" class="navigation navigation-next " aria-label="Next page: Filesystem">
+                <a href="Process.html" class="navigation navigation-next " aria-label="Next page: Process">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -906,7 +920,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MultiCPU","level":"1.5.2.5","depth":3,"next":{"title":"Filesystem","level":"1.5.2.6","depth":3,"path":"guide/操作指南/系統關聯分析/Filesystem.md","ref":"guide/操作指南/系統關聯分析/Filesystem.md","articles":[]},"previous":{"title":"Memory","level":"1.5.2.4","depth":3,"path":"guide/操作指南/系統關聯分析/Memory.md","ref":"guide/操作指南/系統關聯分析/Memory.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/操作指南/系統關聯分析/MultiCPU.md","mtime":"2024-08-01T11:14:39.621Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-01T11:17:16.748Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MultiCPU","level":"1.5.2.5","depth":3,"next":{"title":"Process","level":"1.5.2.6","depth":3,"path":"guide/操作指南/系統關聯分析/Process.md","ref":"guide/操作指南/系統關聯分析/Process.md","articles":[]},"previous":{"title":"Memory","level":"1.5.2.4","depth":3,"path":"guide/操作指南/系統關聯分析/Memory.md","ref":"guide/操作指南/系統關聯分析/Memory.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/操作指南/系統關聯分析/MultiCPU.md","mtime":"2024-08-01T16:34:07.461Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-01T16:49:55.480Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
