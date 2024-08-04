@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>系統命令 · GitBook</title>
+        <title>路徑配置說明 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="備份與還原.html" />
     
-    
-    <link rel="prev" href="用戶配置.html" />
+    <link rel="prev" href="安裝步驟.html" />
     
 
     </head>
@@ -206,9 +204,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../安裝指南/安裝FTP.html">
+        <li class="chapter " data-level="1.4.1" data-path="安裝FTP.html">
             
-                <a href="../安裝指南/安裝FTP.html">
+                <a href="安裝FTP.html">
             
                     
                     安裝FTP
@@ -219,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../安裝指南/安裝Grafana.html">
+        <li class="chapter " data-level="1.4.2" data-path="安裝Grafana.html">
             
-                <a href="../安裝指南/安裝Grafana.html">
+                <a href="安裝Grafana.html">
             
                     
                     安裝Grafana
@@ -232,9 +230,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../安裝指南/安裝步驟.html">
+        <li class="chapter " data-level="1.4.3" data-path="安裝步驟.html">
             
-                <a href="../安裝指南/安裝步驟.html">
+                <a href="安裝步驟.html">
             
                     
                     安裝步驟
@@ -245,9 +243,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../安裝指南/路徑配置說明.html">
+        <li class="chapter active" data-level="1.4.4" data-path="路徑配置說明.html">
             
-                <a href="../安裝指南/路徑配置說明.html">
+                <a href="路徑配置說明.html">
             
                     
                     路徑配置說明
@@ -715,9 +713,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="Keycloak設定.html">
+        <li class="chapter " data-level="1.6.1" data-path="../管理功能/Keycloak設定.html">
             
-                <a href="Keycloak設定.html">
+                <a href="../管理功能/Keycloak設定.html">
             
                     
                     Keycloak設定
@@ -728,9 +726,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="用戶配置.html">
+        <li class="chapter " data-level="1.6.2" data-path="../管理功能/用戶配置.html">
             
-                <a href="用戶配置.html">
+                <a href="../管理功能/用戶配置.html">
             
                     
                     用戶配置
@@ -741,9 +739,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.3" data-path="系統命令.html">
+        <li class="chapter " data-level="1.6.3" data-path="../管理功能/系統命令.html">
             
-                <a href="系統命令.html">
+                <a href="../管理功能/系統命令.html">
             
                     
                     系統命令
@@ -754,9 +752,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="備份與還原.html">
+        <li class="chapter " data-level="1.6.4" data-path="../管理功能/備份與還原.html">
             
-                <a href="備份與還原.html">
+                <a href="../管理功能/備份與還原.html">
             
                     
                     備份與還原
@@ -802,7 +800,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >系統命令</a>
+        <a href="../.." >路徑配置說明</a>
     </h1>
 </div>
 
@@ -817,16 +815,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5E38;&#x7528;-cli-&#x547D;&#x4EE4;">&#x5E38;&#x7528; CLI &#x547D;&#x4EE4;</h1>
-<p>&#x672C;&#x7AE0;&#x7BC0;&#x5217;&#x51FA;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684; CLI &#x547D;&#x4EE4;&#x53CA;&#x5176;&#x7528;&#x9014;&#xFF0C;&#x5E6B;&#x52A9;&#x60A8;&#x66F4;&#x6709;&#x6548;&#x5730;&#x7BA1;&#x7406;&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7D71;&#x3002;</p>
-<h2 id="&#x67E5;&#x770B;-service-&#x72C0;&#x614B;">&#x67E5;&#x770B; service &#x72C0;&#x614B;</h2>
-<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x67E5;&#x770B; <code>bimap-ipoc</code> &#x670D;&#x52D9;&#x7684;&#x7576;&#x524D;&#x72C0;&#x614B;&#xFF1A;</p>
-<pre><code class="lang-bash">systemctl status bimap-ipoc
-</code></pre>
-<h2 id="&#x91CD;&#x555F;-service">&#x91CD;&#x555F; service</h2>
-<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x91CD;&#x555F; <code>bimap-ipoc</code> &#x670D;&#x52D9;&#xFF1A;</p>
-<pre><code class="lang-bash">systemctl restart bimap-ipoc
-</code></pre>
+                                <h1 id="&#x8DEF;&#x5F91;&#x914D;&#x7F6E;&#x8AAA;&#x660E;">&#x8DEF;&#x5F91;&#x914D;&#x7F6E;&#x8AAA;&#x660E;</h1>
+<h2 id="&#x8A2D;&#x5B9A;&#x6A94;&#x8DEF;&#x5F91;">&#x8A2D;&#x5B9A;&#x6A94;&#x8DEF;&#x5F91;</h2>
+<ul>
+<li>&#x8A2D;&#x5B9A;&#x6A94;&#x4F4D;&#x7F6E;: <code>/etc/bimap-ipoc/config.yml</code></li>
+</ul>
+<h2 id="&#x65E5;&#x8A8C;&#x8DEF;&#x5F91;">&#x65E5;&#x8A8C;&#x8DEF;&#x5F91;</h2>
+<ul>
+<li>&#x670D;&#x52D9;&#x65E5;&#x8A8C;&#x8DEF;&#x5F91;: <code>/var/log/bimap-ipoc/ipoc.log</code></li>
+</ul>
+<h2 id="&#x6548;&#x80FD;&#x8CC7;&#x6599;&#x5B58;&#x653E;&#x8DEF;&#x5F91;">&#x6548;&#x80FD;&#x8CC7;&#x6599;&#x5B58;&#x653E;&#x8DEF;&#x5F91;</h2>
+<ul>
+<li>&#x6548;&#x80FD;&#x8CC7;&#x6599;&#x4E0A;&#x50B3;&#x8DEF;&#x5F91;: <code>/home/sftpuser/master</code></li>
+<li>&#x6548;&#x80FD;&#x8CC7;&#x6599;&#x89E3;&#x6790;&#x6210;&#x529F;&#x5F8C;&#x5B58;&#x653E;&#x8DEF;&#x5F91;: <code>/var/lib/bimap-ipoc/backup</code></li>
+<li>&#x6548;&#x80FD;&#x8CC7;&#x6599;&#x932F;&#x8AA4;&#x5B58;&#x653E;&#x8DEF;&#x5F91;: <code>/var/lib/bimap-ipoc/error</code></li>
+</ul>
 
                                 
                                 </section>
@@ -854,14 +857,10 @@
 
             
                 
-                <a href="用戶配置.html" class="navigation navigation-prev " aria-label="Previous page: 用戶配置">
+                <a href="安裝步驟.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 安裝步驟">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="備份與還原.html" class="navigation navigation-next " aria-label="Next page: 備份與還原">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -870,7 +869,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"系統命令","level":"1.6.3","depth":2,"next":{"title":"備份與還原","level":"1.6.4","depth":2,"path":"guide/管理功能/備份與還原.md","ref":"guide/管理功能/備份與還原.md","articles":[]},"previous":{"title":"用戶配置","level":"1.6.2","depth":2,"path":"guide/管理功能/用戶配置.md","ref":"guide/管理功能/用戶配置.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/管理功能/系統命令.md","mtime":"2024-07-31T10:16:39.489Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-04T15:09:18.242Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"路徑配置說明","level":"1.4.4","depth":2,"next":{"title":"操作指南","level":"1.5","depth":1,"ref":"","articles":[{"title":"系統概覽","level":"1.5.1","depth":2,"path":"guide/操作指南/系統概覽.md","ref":"guide/操作指南/系統概覽.md","articles":[]},{"title":"系統關聯分析","level":"1.5.2","depth":2,"ref":"","articles":[{"title":"Sysload","level":"1.5.2.1","depth":3,"path":"guide/操作指南/系統關聯分析/Sysload.md","ref":"guide/操作指南/系統關聯分析/Sysload.md","articles":[]},{"title":"Diskload","level":"1.5.2.2","depth":3,"path":"guide/操作指南/系統關聯分析/Diskload.md","ref":"guide/操作指南/系統關聯分析/Diskload.md","articles":[]},{"title":"Netload","level":"1.5.2.3","depth":3,"path":"guide/操作指南/系統關聯分析/Netload.md","ref":"guide/操作指南/系統關聯分析/Netload.md","articles":[]},{"title":"Memory","level":"1.5.2.4","depth":3,"path":"guide/操作指南/系統關聯分析/Memory.md","ref":"guide/操作指南/系統關聯分析/Memory.md","articles":[]},{"title":"MultiCPU","level":"1.5.2.5","depth":3,"path":"guide/操作指南/系統關聯分析/MultiCPU.md","ref":"guide/操作指南/系統關聯分析/MultiCPU.md","articles":[]},{"title":"Process","level":"1.5.2.6","depth":3,"path":"guide/操作指南/系統關聯分析/Process.md","ref":"guide/操作指南/系統關聯分析/Process.md","articles":[]},{"title":"Filesystem","level":"1.5.2.7","depth":3,"path":"guide/操作指南/系統關聯分析/Filesystem.md","ref":"guide/操作指南/系統關聯分析/Filesystem.md","articles":[]}]},{"title":"指標自選區","level":"1.5.3","depth":2,"ref":"","articles":[{"title":"RawData","level":"1.5.3.1","depth":3,"path":"guide/操作指南/指標自選區/RawData.md","ref":"guide/操作指南/指標自選區/RawData.md","articles":[]},{"title":"定義KPI指標","level":"1.5.3.2","depth":3,"path":"guide/操作指南/指標自選區/定義KPI指標.md","ref":"guide/操作指南/指標自選區/定義KPI指標.md","articles":[]},{"title":"定義儀表板","level":"1.5.3.3","depth":3,"path":"guide/操作指南/指標自選區/定義儀表板.md","ref":"guide/操作指南/指標自選區/定義儀表板.md","articles":[]}]},{"title":"告警管理","level":"1.5.4","depth":2,"ref":"","articles":[{"title":"當前告警","level":"1.5.4.1","depth":3,"path":"guide/操作指南/告警管理/當前告警.md","ref":"guide/操作指南/告警管理/當前告警.md","articles":[]},{"title":"歷史告警","level":"1.5.4.2","depth":3,"path":"guide/操作指南/告警管理/歷史告警.md","ref":"guide/操作指南/告警管理/歷史告警.md","articles":[]},{"title":"規則列表","level":"1.5.4.3","depth":3,"path":"guide/操作指南/告警管理/規則列表.md","ref":"guide/操作指南/告警管理/規則列表.md","articles":[]},{"title":"通知管道","level":"1.5.4.4","depth":3,"path":"guide/操作指南/告警管理/通知管道/REMDME.md","ref":"guide/操作指南/告警管理/通知管道/REMDME.md","articles":[{"title":"Teams","level":"1.5.4.4.1","depth":4,"path":"guide/操作指南/告警管理/通知管道/Teams.md","ref":"guide/操作指南/告警管理/通知管道/Teams.md","articles":[]}]},{"title":"告警抑制","level":"1.5.4.5","depth":3,"path":"guide/操作指南/告警管理/告警抑制.md","ref":"guide/操作指南/告警管理/告警抑制.md","articles":[]},{"title":"規則標籤","level":"1.5.4.6","depth":3,"path":"guide/操作指南/告警管理/規則標籤.md","ref":"guide/操作指南/告警管理/規則標籤.md","articles":[]}]},{"title":"基本設定","level":"1.5.5","depth":2,"ref":"","articles":[{"title":"伺服器標籤","level":"1.5.5.1","depth":3,"path":"guide/操作指南/基本設定/伺服器標籤.md","ref":"guide/操作指南/基本設定/伺服器標籤.md","articles":[]},{"title":"效能數據上傳","level":"1.5.5.2","depth":3,"path":"guide/操作指南/基本設定/效能數據上傳.md","ref":"guide/操作指南/基本設定/效能數據上傳.md","articles":[]}]},{"title":"智能預警","level":"1.5.6","depth":2,"ref":"","articles":[{"title":"硬碟滿載預警","level":"1.5.6.1","depth":3,"path":"guide/操作指南/智能預警/硬碟滿載預警.md","ref":"guide/操作指南/智能預警/硬碟滿載預警.md","articles":[]}]},{"title":"進階設定","level":"1.5.7","depth":2,"ref":"","articles":[{"title":"選單設定","level":"1.5.7.1","depth":3,"path":"guide/操作指南/進階設定/選單設定.md","ref":"guide/操作指南/進階設定/選單設定.md","articles":[]},{"title":"伺服器群組","level":"1.5.7.2","depth":3,"path":"guide/操作指南/進階設定/伺服器群組.md","ref":"guide/操作指南/進階設定/伺服器群組.md","articles":[]}]}]},"previous":{"title":"安裝步驟","level":"1.4.3","depth":2,"path":"guide/安裝指南/安裝步驟.md","ref":"guide/安裝指南/安裝步驟.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/安裝指南/路徑配置說明.md","mtime":"2024-08-03T14:52:36.430Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-04T15:09:18.242Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
