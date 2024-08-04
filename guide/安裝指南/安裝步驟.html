@@ -818,87 +818,82 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5B89;&#x88DD;&#x6B65;&#x9A5F;">&#x5B89;&#x88DD;&#x6B65;&#x9A5F;</h1>
-<h4 id="&#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#x5305;">&#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#x5305;</h4>
-<h4 id="&#x89E3;&#x58D3;&#x5B89;&#x88DD;&#x5305;&#x4E26;&#x57F7;&#x884C;&#x5B89;&#x88DD;&#x8173;&#x672C;">&#x89E3;&#x58D3;&#x5B89;&#x88DD;&#x5305;&#x4E26;&#x57F7;&#x884C;&#x5B89;&#x88DD;&#x8173;&#x672C;</h4>
+<h3 id="&#x76EE;&#x9304;&#x7D50;&#x69CB;">&#x76EE;&#x9304;&#x7D50;&#x69CB;</h3>
+<p>&#x78BA;&#x4FDD;&#x76EE;&#x9304;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x5B89;&#x88DD;&#x6A94;&#x6848;&#xFF1A;</p>
+<pre><code>installation/
+&#x251C;&#x2500;&#x2500; bimap-ipoc-backend-*.deb
+&#x251C;&#x2500;&#x2500; bimap-ipoc-frontend-*.deb
+&#x251C;&#x2500;&#x2500; keycloak.deb
+&#x251C;&#x2500;&#x2500; db_init.sql
+&#x251C;&#x2500;&#x2500; influxdb2-2.7.1-amd64.deb
+&#x251C;&#x2500;&#x2500; influxdb2-client-2.7.3-linux-amd64.tar.gz
+&#x2514;&#x2500;&#x2500; install.sh
+</code></pre><h3 id="1-&#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#x5305;">1. &#x4E0B;&#x8F09;&#x5B89;&#x88DD;&#x5305;</h3>
+<p>&#x5C07;&#x6240;&#x6709;&#x5B89;&#x88DD;&#x5305;&#x4E0B;&#x8F09;&#x4E26;&#x653E;&#x7F6E;&#x5728; <code>installation</code> &#x76EE;&#x9304;&#x4E0B;&#x3002;</p>
+<h3 id="2-&#x89E3;&#x58D3;&#x5B89;&#x88DD;&#x5305;&#x4E26;&#x57F7;&#x884C;&#x5B89;&#x88DD;&#x8173;&#x672C;">2. &#x89E3;&#x58D3;&#x5B89;&#x88DD;&#x5305;&#x4E26;&#x57F7;&#x884C;&#x5B89;&#x88DD;&#x8173;&#x672C;</h3>
+<p>&#x5728; <code>installation</code> &#x76EE;&#x9304;&#x4E0B;&#xFF0C;&#x5275;&#x5EFA; <code>install.sh</code> &#x4E26;&#x5C07;&#x4EE5;&#x4E0B;&#x5167;&#x5BB9;&#x8907;&#x88FD;&#x9032;&#x53BB;&#xFF1A;</p>
 <pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash
 </span>
 USERNAME=bimap
 PASSWORD=1qaz2wsx
-IP=$(hostname -I  | tr <span class="hljs-_">-d</span> <span class="hljs-string">&apos;[:blank:]&apos;</span>)
+IP=$(hostname -I | awk <span class="hljs-string">&apos;{print $1}&apos;</span>)
 
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5B89;&#x88DD;&#x76F8;&#x4F9D;&#x5957;&#x4EF6; (&#x8981;&#x7B49;&#x4E00;&#x4E0B;)&apos;</span>
 sudo apt-get update
-sudo apt install mysql-server nginx openjdk-17-jdk zip ssh sysstat nmon -y &amp;&gt; /dev/null
+sudo apt-get install -y mysql-server nginx openjdk-17-jdk zip ssh sysstat nmon jq &amp;&gt; /dev/null
 
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x521D;&#x59CB;&#x5316; MySQL &#x8CC7;&#x6599;&#x5EAB;&apos;</span>
 sudo mysql &lt; db_init.sql
 
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5B89;&#x88DD; keycloak &#x6A21;&#x7D44;&#x5305;&apos;</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;keycloak &#x9810;&#x8A2D;&#x5E33;&#x865F;&#xFF1A;bimap &#x9810;&#x8A2D;&#x5BC6;&#x78BC;&#xFF1A;1qazxcv&apos;</span>
 sudo dpkg -i ./keycloak.deb
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x66F4;&#x65B0; keycloak ip&apos;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x66F4;&#x65B0; keycloak IP&apos;</span>
 sudo sed -i <span class="hljs-string">&quot;s/change_me/<span class="hljs-variable">$IP</span>/&quot;</span> /usr/bin/keycloak/conf/keycloak.conf
 sudo systemctl restart keycloak
 
-
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5B89;&#x88DD; bimap &#x6A21;&#x7D44;&#x5305;&apos;</span>
-sudo dpkg -i ./ipoc-backend/bimap-ipoc-backend-v1.4.1.deb
-sudo dpkg -i ./ipoc-frontend/bimap-ipoc-frontend-v1.3.9.deb
+sudo dpkg -i ./bimap-ipoc-backend-*.deb
+sudo dpkg -i ./bimap-ipoc-frontend-*.deb
 
-
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x66F4;&#x65B0; ipoc yaml &#x7684; host ip&apos;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x66F4;&#x65B0; ipoc yaml &#x7684; host IP&apos;</span>
 sudo sed -i <span class="hljs-string">&quot;s/{{change_to_host_ip}}/<span class="hljs-variable">$IP</span>/&quot;</span> /etc/bimap-ipoc/config.yml
 
-
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5B89;&#x88DD; influxdb&apos;</span>
-wget https://dl.influxdata.com/influxdb/releases/influxdb2-2.7.1-amd64.deb
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5B89;&#x88DD; InfluxDB&apos;</span>
 sudo dpkg -i influxdb2-2.7.1-amd64.deb
 sudo systemctl restart influxdb
 
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5B89;&#x88DD; influxdb cli&apos;</span>
-wget https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.7.3-linux-amd64.tar.gz
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5B89;&#x88DD; InfluxDB CLI&apos;</span>
 tar xvzf ./influxdb2-client-2.7.3-linux-amd64.tar.gz
 sudo cp ./influx /usr/<span class="hljs-built_in">local</span>/bin/
 
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x521D;&#x59CB;&#x5316; influxdb&apos;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x521D;&#x59CB;&#x5316; InfluxDB&apos;</span>
 influx setup --org master --bucket oss_metrics --username <span class="hljs-variable">$USERNAME</span> --password <span class="hljs-variable">$PASSWORD</span> --force
 
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5217;&#x51FA; influxdb token&apos;</span>
-INFLUX_TOKEN=$(influx auth ls | awk <span class="hljs-string">&apos;/bimap/{print $4}&apos;</span>)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x5217;&#x51FA; InfluxDB token&apos;</span>
+INFLUX_TOKEN=$(influx auth list --json | jq -r <span class="hljs-string">&apos;.[0].token&apos;</span>)
 sudo sed -i <span class="hljs-string">&quot;s/{{change_influxdb_token}}/<span class="hljs-variable">$INFLUX_TOKEN</span>/&quot;</span> /etc/bimap-ipoc/config.yml
 
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x555F;&#x52D5; ipoc &#x524D;&#x7AEF;&apos;</span>
 sudo systemctl restart nginx
 
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;sudo systemctl restart bimap-ipoc&apos;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;start =&gt; &#x555F;&#x52D5; bimap-ipoc &#x670D;&#x52D9;&apos;</span>
+sudo systemctl restart bimap-ipoc
 
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&#x78BA;&#x8A8D; bimap-ipoc &#x670D;&#x52D9;&#x555F;&#x52D5;&#x6B63;&#x5E38; &#xFF0C;&#x5C31;&#x7528; curl &#x521D;&#x59CB;&#x5316; keycloak&apos;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&#x78BA;&#x8A8D; bimap-ipoc &#x670D;&#x52D9;&#x555F;&#x52D5;&#x6B63;&#x5E38;&#x5F8C;&#xFF0C;&#x521D;&#x59CB;&#x5316; Keycloak&apos;</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;curl -X GET http://localhost:8700/api/v1/set-sso-by-ipoc&apos;</span>
 </code></pre>
-<h4 id="&#x914D;&#x7F6E;&#x7CFB;&#x7D71;&#x6240;&#x9700;&#x7684;&#x53C3;&#x6578;&#x548C;&#x74B0;&#x5883;&#x8B8A;&#x6578;">&#x914D;&#x7F6E;&#x7CFB;&#x7D71;&#x6240;&#x9700;&#x7684;&#x53C3;&#x6578;&#x548C;&#x74B0;&#x5883;&#x8B8A;&#x6578;</h4>
-<h4 id="&#x9A57;&#x8B49;&#x914D;&#x7F6E;">&#x9A57;&#x8B49;&#x914D;&#x7F6E;</h4>
+<p>&#x57F7;&#x884C;&#x5B89;&#x88DD;&#x8173;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> installation
+chmod +x install.sh
+sudo ./install.sh
+</code></pre>
+<h3 id="3-&#x914D;&#x7F6E;&#x7CFB;&#x7D71;&#x6240;&#x9700;&#x7684;&#x53C3;&#x6578;&#x548C;&#x74B0;&#x5883;&#x8B8A;&#x6578;">3. &#x914D;&#x7F6E;&#x7CFB;&#x7D71;&#x6240;&#x9700;&#x7684;&#x53C3;&#x6578;&#x548C;&#x74B0;&#x5883;&#x8B8A;&#x6578;</h3>
+<h3 id="4-&#x9A57;&#x8B49;&#x914D;&#x7F6E;">4. &#x9A57;&#x8B49;&#x914D;&#x7F6E;</h3>
 <ol>
 <li><strong>&#x78BA;&#x8A8D;&#x8A2D;&#x5B9A;</strong>&#xFF1A;&#x78BA;&#x4FDD;&#x6240;&#x6709;&#x57FA;&#x672C;&#x548C;&#x9032;&#x968E;&#x8A2D;&#x5B9A;&#x5DF2;&#x6B63;&#x78BA;&#x914D;&#x7F6E;&#x4E26;&#x4FDD;&#x5B58;&#x3002;</li>
 <li><strong>&#x6E2C;&#x8A66;&#x9023;&#x63A5;</strong>&#xFF1A;&#x6E2C;&#x8A66;&#x4F3A;&#x670D;&#x5668;&#x548C;&#x6578;&#x64DA;&#x6E90;&#x7684;&#x9023;&#x63A5;&#xFF0C;&#x78BA;&#x4FDD;&#x6240;&#x6709;&#x6578;&#x64DA;&#x80FD;&#x5920;&#x6B63;&#x5E38;&#x4E0A;&#x50B3;&#x548C;&#x89E3;&#x6790;&#x3002;</li>
 <li><strong>&#x6AA2;&#x67E5;&#x5100;&#x8868;&#x677F;</strong>&#xFF1A;&#x9032;&#x5165;&#x5100;&#x8868;&#x677F;&#x9801;&#x9762;&#xFF0C;&#x78BA;&#x8A8D;&#x6578;&#x64DA;&#x986F;&#x793A;&#x6B63;&#x78BA;&#xFF0C;&#x6240;&#x6709;&#x6307;&#x6A19;&#x548C;&#x5716;&#x8868;&#x90FD;&#x80FD;&#x5920;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</li>
-</ol>
-<h4 id="&#x914D;&#x7F6E;-grafana-&#x5982;&#x6709;&#x9700;&#x8981;">&#x914D;&#x7F6E; Grafana (&#x5982;&#x6709;&#x9700;&#x8981;)</h4>
-<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x4F7F;&#x7528; Grafana &#x4F86;&#x9032;&#x884C;&#x6578;&#x64DA;&#x53EF;&#x8996;&#x5316;&#xFF0C;&#x8ACB;&#x9032;&#x884C;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#xFF1A;</p>
-<ol>
-<li><strong>&#x53D6; Grafana API Key</strong></li>
-</ol>
-<pre><code class="lang-bash">curl -X POST -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> <span class="hljs-_">-d</span> <span class="hljs-string">&apos;{&quot;name&quot;:&quot;apikey&quot;, &quot;role&quot;: &quot;Admin&quot;}&apos;</span> http://admin:admin@localhost:3000/api/auth/keys
-</code></pre>
-<ol>
-<li><strong>Grafana DataTable Plugin &#x8A2D;&#x5B9A;</strong></li>
-</ol>
-<pre><code class="lang-bash">grafana-cli plugins install briangann-datatable-panel
-systemctl restart grafana-server
-cp -rp briangann-datatable-panel /var/lib/grafana/plugins/
-chown -R grafana:grafana /var/lib/grafana/plugins/*
-</code></pre>
-<ol>
-<li><strong>&#x6548;&#x80FD;&#x6578;&#x64DA;&#x4E0A;&#x50B3;</strong>&#xFF1A;
-&#x9032;&#x5165;&#x300C;&#x6548;&#x80FD;&#x6578;&#x64DA;&#x4E0A;&#x50B3;&#x300D;&#x9078;&#x9805;&#xFF0C;&#x914D;&#x7F6E;&#x6578;&#x64DA;&#x4E0A;&#x50B3;&#x8DEF;&#x5F91;&#xFF08;&#x9810;&#x8A2D;&#x70BA; <code>/home/sftpuser/master</code>&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6839;&#x64DA;&#x9700;&#x6C42;&#x4FEE;&#x6539;&#xFF09;&#xFF0C;&#x78BA;&#x4FDD;&#x6548;&#x80FD;&#x6578;&#x64DA;&#x80FD;&#x5920;&#x6B63;&#x78BA;&#x4E0A;&#x50B3;&#x4E26;&#x89E3;&#x6790;&#x3002;</li>
 </ol>
 
                                 
@@ -943,7 +938,7 @@ chown -R grafana:grafana /var/lib/grafana/plugins/*
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安裝步驟","level":"1.4.2","depth":2,"next":{"title":"安裝FTP","level":"1.4.3","depth":2,"path":"guide/安裝指南/安裝FTP.md","ref":"guide/安裝指南/安裝FTP.md","articles":[]},"previous":{"title":"路徑配置說明","level":"1.4.1","depth":2,"path":"guide/安裝指南/路徑配置說明.md","ref":"guide/安裝指南/路徑配置說明.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/安裝指南/安裝步驟.md","mtime":"2024-08-04T15:03:33.284Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-04T15:26:54.803Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"安裝步驟","level":"1.4.2","depth":2,"next":{"title":"安裝FTP","level":"1.4.3","depth":2,"path":"guide/安裝指南/安裝FTP.md","ref":"guide/安裝指南/安裝FTP.md","articles":[]},"previous":{"title":"路徑配置說明","level":"1.4.1","depth":2,"path":"guide/安裝指南/路徑配置說明.md","ref":"guide/安裝指南/路徑配置說明.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/安裝指南/安裝步驟.md","mtime":"2024-08-04T15:39:00.822Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-04T15:40:22.386Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
