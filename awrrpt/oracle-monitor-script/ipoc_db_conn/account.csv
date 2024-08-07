@@ -1,0 +1,3 @@
+sys,oracle,pdb1 as sysdba
+sys,oracle,pdb2 as sysdba
+sys,oracle,pdb3 as sysdba
