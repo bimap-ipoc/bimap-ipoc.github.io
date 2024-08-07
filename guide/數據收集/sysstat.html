@@ -899,11 +899,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="sysstat-&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;">Sysstat &#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;</h3>
+                                <h1 id="sysstat-&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;">Sysstat &#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;</h1>
 <h4 id="1-&#x5B89;&#x88DD;-sysstat-&#x547D;&#x4EE4;">1. &#x5B89;&#x88DD; sysstat &#x547D;&#x4EE4;</h4>
 <p>&#x57F7;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x4EE5;&#x5B89;&#x88DD; <code>sysstat</code>&#xFF1A;</p>
-<pre><code class="lang-bash">apt update
-apt-get install sysstat
+<pre><code class="lang-bash">sudo apt update
+sudo apt-get install sysstat
 </code></pre>
 <h4 id="2-&#x555F;&#x7528;-sysstat">2. &#x555F;&#x7528; sysstat</h4>
 <p>&#x7DE8;&#x8F2F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;</p>
@@ -926,13 +926,42 @@ apt-get install sysstat
 <pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-built_in">export</span> LC_ALL=C
 
-Host=`hostname`
-Seconds=60
-Count=60
-RetentionDays=30
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment">########        &#x8A2D;&#x5B9A;&#x74B0;&#x5883;&#x8B8A;&#x6578;               ########</span>
+<span class="hljs-comment">#################################################</span>
+Host=$(hostname)
+Seconds=<span class="hljs-variable">${1:-60}</span>   <span class="hljs-comment"># &#x9ED8;&#x8A8D;&#x6BCF;&#x6B21;&#x9593;&#x9694;60&#x79D2;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x904E;&#x53C3;&#x6578;&#x50B3;&#x905E;&#x4FEE;&#x6539;</span>
+Count=<span class="hljs-variable">${2:-60}</span>     <span class="hljs-comment"># &#x9ED8;&#x8A8D;&#x6BCF;60&#x6B21;&#x6536;&#x96C6;&#x6578;&#x64DA;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x904E;&#x53C3;&#x6578;&#x50B3;&#x905E;&#x4FEE;&#x6539;</span>
+RetentionDays=30   <span class="hljs-comment"># &#x8D85;&#x904E;30&#x5929;&#x7684;&#x6A94;&#x6848;&#x4E0D;&#x505A;&#x4FDD;&#x7559;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x8A71;&#x8ACB;&#x958B;&#x555F;&#x5C3E;&#x6BB5;&#x7684;&#x8A3B;&#x89E3;</span>
+Yesterday=$(perl -MPOSIX -le <span class="hljs-string">&apos;print strftime &quot;%y%m%d&quot;, localtime(time()-86400)&apos;</span>)
+DateTime=$(perl -MPOSIX -le <span class="hljs-string">&apos;print strftime &quot;%Y%m%d%H%M&quot;, localtime&apos;</span>)
 LogDir=<span class="hljs-string">&quot;/home/bimap/sardata&quot;</span>
-DateTime=`date +%Y%m%d%H%M`
-Yesterday=`date <span class="hljs-_">-d</span> <span class="hljs-string">&quot;yesterday&quot;</span> +%Y%m%d`
+SentDir=<span class="hljs-string">&quot;<span class="hljs-variable">$LogDir</span>/sent&quot;</span>
+BackupDir=<span class="hljs-string">&quot;<span class="hljs-variable">$LogDir</span>/backup&quot;</span>
+UploadDir=<span class="hljs-string">&quot;/home/sftpuser/master&quot;</span>  <span class="hljs-comment"># &#x65E5;&#x8A8C;&#x4E0A;&#x50B3;&#x8DEF;&#x5F91;</span>
+
+<span class="hljs-comment"># SCP &#x76EE;&#x6A19;&#x8DEF;&#x5F91;&#x8A2D;&#x5B9A;</span>
+SCP_TARGET=<span class="hljs-string">&quot;bimap@10.99.1.106:<span class="hljs-variable">$UploadDir</span>&quot;</span>
+
+<span class="hljs-comment"># FTP &#x8A2D;&#x5B9A;&#x53C3;&#x6578;</span>
+FTPURL=<span class="hljs-string">&quot;10.99.1.106&quot;</span>
+FTPUSER=<span class="hljs-string">&quot;sftpuser&quot;</span>
+FTPPASS=<span class="hljs-string">&quot;1qaz2wsx&quot;</span>
+
+<span class="hljs-comment"># &#x4E0A;&#x50B3;&#x65B9;&#x6CD5;&#x9078;&#x64C7;&#xFF1A;&#x53EF;&#x9078; &quot;ftp&quot;&#x3001;&quot;mv&quot; &#x6216; &quot;scp&quot;</span>
+UPLOAD_METHOD=<span class="hljs-string">&quot;scp&quot;</span>
+
+<span class="hljs-keyword">if</span> [[ ! <span class="hljs-string">&quot; ftp mv scp &quot;</span> =~ <span class="hljs-string">&quot; <span class="hljs-variable">${UPLOAD_METHOD}</span> &quot;</span> ]]; <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x672A;&#x77E5;&#x7684;&#x4E0A;&#x50B3;&#x65B9;&#x5F0F;: <span class="hljs-variable">$UPLOAD_METHOD</span>. &#x8ACB;&#x9078;&#x64C7; &apos;ftp&apos;, &apos;mv&apos; &#x6216; &apos;scp&apos;.&quot;</span>
+  <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x4E0A;&#x50B3;&#x65B9;&#x5F0F;: <span class="hljs-variable">$UPLOAD_METHOD</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x6536;&#x96C6;&#x9593;&#x9694;: <span class="hljs-variable">$Seconds</span> &#x79D2;, &#x6536;&#x96C6;&#x6B21;&#x6578;: <span class="hljs-variable">$Count</span> &#x6B21;&quot;</span>
+
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment">########         &#x57F7;&#x884C;&#x6536;&#x96C6;&#x547D;&#x4EE4;              ########</span>
+<span class="hljs-comment">#################################################</span>
 Header=<span class="hljs-string">&quot;===== CollectLinuxServer: <span class="hljs-variable">$Host</span>-sar <span class="hljs-variable">$DateTime</span> =====&quot;</span>
 
 Cpu=<span class="hljs-string">&quot;<span class="hljs-variable">$Host</span>-<span class="hljs-variable">$DateTime</span>.cpu&quot;</span>
@@ -942,7 +971,21 @@ Diskio=<span class="hljs-string">&quot;<span class="hljs-variable">$Host</span>-
 Process=<span class="hljs-string">&quot;<span class="hljs-variable">$Host</span>-<span class="hljs-variable">$DateTime</span>.process&quot;</span>
 Disk=<span class="hljs-string">&quot;<span class="hljs-variable">$Host</span>-<span class="hljs-variable">$DateTime</span>.disk&quot;</span>
 
+mkdir -p <span class="hljs-variable">$SentDir</span>
+mkdir -p <span class="hljs-variable">$BackupDir</span>
+mkdir -p <span class="hljs-variable">$LogDir</span>
+
 <span class="hljs-built_in">cd</span> <span class="hljs-variable">$LogDir</span>
+<span class="hljs-comment"># &#x7372;&#x53D6;&#x820A;&#x7684;sar&#x6587;&#x4EF6;</span>
+Files=$(ls <span class="hljs-variable">$Host</span>* 2&gt; /dev/null)
+<span class="hljs-keyword">if</span> [ -z <span class="hljs-string">&quot;<span class="hljs-variable">$Files</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x6C92;&#x6709;&#x820A;&#x7684;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x79FB;&#x52D5;&quot;</span>
+<span class="hljs-keyword">else</span>
+  <span class="hljs-comment"># &#x5C07;&#x820A;&#x6587;&#x4EF6;&#x79FB;&#x52D5;&#x5230;SentDir</span>
+  mv <span class="hljs-variable">$Files</span> <span class="hljs-variable">$SentDir</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># &#x6536;&#x96C6;&#x65B0;&#x7684;sar&#x6587;&#x4EF6;</span>
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-variable">$Cpu</span> <span class="hljs-variable">$Net</span> <span class="hljs-variable">$Mem</span> <span class="hljs-variable">$Diskio</span> <span class="hljs-variable">$Process</span> <span class="hljs-variable">$Disk</span>
 <span class="hljs-keyword">do</span>
     touch <span class="hljs-variable">$i</span> &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-variable">$Header</span> &gt; <span class="hljs-variable">$i</span>
@@ -960,20 +1003,63 @@ df -k | head -n 1 &gt;&gt; <span class="hljs-variable">$Disk</span>
     sleep <span class="hljs-variable">$Seconds</span>
 <span class="hljs-keyword">done</span>
 
-<span class="hljs-keyword">if</span> [ ! <span class="hljs-_">-d</span> <span class="hljs-variable">$LogDir</span>/backup ]; <span class="hljs-keyword">then</span>
-    mkdir <span class="hljs-variable">$LogDir</span>/backup
+sleep 10
+
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment">########      &#x6839;&#x64DA;&#x9078;&#x64C7;&#x7684;&#x65B9;&#x5F0F;&#x4E0A;&#x50B3;&#x6587;&#x4EF6;         ########</span>
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-built_in">cd</span> <span class="hljs-variable">$SentDir</span>
+
+<span class="hljs-keyword">case</span> <span class="hljs-variable">$UPLOAD_METHOD</span> <span class="hljs-keyword">in</span>
+  <span class="hljs-string">&quot;ftp&quot;</span>)
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$(ls -A $SentDir)</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+      ftp -inv <span class="hljs-variable">$FTPURL</span> &lt;&lt; EOF &gt; <span class="hljs-variable">$LogDir</span>/ftplog.txt
+user <span class="hljs-variable">$FTPUSER</span> <span class="hljs-variable">$FTPPASS</span>
+binary
+mput *
+<span class="hljs-built_in">bye</span>
+EOF
+      msg=$(grep <span class="hljs-string">&quot;complete&quot;</span> <span class="hljs-variable">$LogDir</span>/ftplog.txt)
+      <span class="hljs-keyword">if</span> [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$msg</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+          mv <span class="hljs-variable">$SentDir</span>/*.* <span class="hljs-variable">$BackupDir</span>
+      <span class="hljs-keyword">fi</span>
+      rm -rf <span class="hljs-variable">$LogDir</span>/ftplog.txt
+    <span class="hljs-keyword">fi</span>
+    ;;
+
+  <span class="hljs-string">&quot;mv&quot;</span>)
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$(ls -A $SentDir)</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+      mv <span class="hljs-variable">$SentDir</span>/* <span class="hljs-variable">$UploadDir</span>
+    <span class="hljs-keyword">fi</span>
+    ;;
+
+  <span class="hljs-string">&quot;scp&quot;</span>)
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$(ls -A $SentDir)</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+      scp * <span class="hljs-variable">$SCP_TARGET</span>
+      <span class="hljs-keyword">if</span> [ $? <span class="hljs-_">-eq</span> 0 ]; <span class="hljs-keyword">then</span>
+          mv <span class="hljs-variable">$SentDir</span>/*.* <span class="hljs-variable">$BackupDir</span>
+      <span class="hljs-keyword">fi</span>
+    <span class="hljs-keyword">fi</span>
+    ;;
+
+  *)
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x672A;&#x77E5;&#x7684;&#x4E0A;&#x50B3;&#x65B9;&#x5F0F;: <span class="hljs-variable">$UPLOAD_METHOD</span>&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+    ;;
+<span class="hljs-keyword">esac</span>
+
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment">########          &#x58D3;&#x7E2E;&#x4E26;&#x5099;&#x4EFD;             ########</span>
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment"># 1. &#x6AA2;&#x67E5;&#x4E26;&#x5C07;&#x6628;&#x5929;&#x7684;&#x6A94;&#x6848;&#xFF0C;&#x4FDD;&#x5B58;&#x6210;&#x4E00;&#x4EFD;&#x58D3;&#x7E2E;&#x6A94;</span>
+<span class="hljs-built_in">cd</span> <span class="hljs-variable">$BackupDir</span>
+<span class="hljs-keyword">if</span> ls *<span class="hljs-variable">$Yesterday</span>* 1&gt; /dev/null 2&gt;&amp;1; <span class="hljs-keyword">then</span>
+    <span class="hljs-comment"># &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5C07;&#x8A72;&#x6A94;&#x6848;&#x58D3;&#x7E2E;&#x8D77;&#x4F86;</span>
+    tar -czvf <span class="hljs-string">&quot;<span class="hljs-variable">${Host}</span>-<span class="hljs-variable">${Yesterday}</span>.tar.gz&quot;</span> *<span class="hljs-variable">$Yesterday</span>*.* &amp;&amp; rm -rf *<span class="hljs-variable">$Yesterday</span>*.*
 <span class="hljs-keyword">fi</span>
 
-mv <span class="hljs-variable">$LogDir</span>/*.* <span class="hljs-variable">$LogDir</span>/backup
-
-<span class="hljs-built_in">cd</span> <span class="hljs-variable">$LogDir</span>/backup
-ls | grep -q <span class="hljs-variable">$Yesterday</span>[0-9]
-<span class="hljs-keyword">if</span> [ $? <span class="hljs-_">-eq</span> 0 ]; <span class="hljs-keyword">then</span>
-    tar zcvf <span class="hljs-variable">$Host</span><span class="hljs-string">&quot;-&quot;</span><span class="hljs-variable">$Yesterday</span>.tar.gz *<span class="hljs-variable">$Yesterday</span>* &amp;&amp; rm *<span class="hljs-variable">$Yesterday</span>[0-9]*
-<span class="hljs-keyword">fi</span>
-
-<span class="hljs-comment"># Uncomment to enable automatic deletion of old files</span>
-<span class="hljs-comment"># find $LogDir/backup/*.tar.gz -maxdepth 1 -mtime +$RetentionDays -type f -delete</span>
+<span class="hljs-comment"># 2. &#x5B9A;&#x671F;&#x5C07;&#x6A94;&#x6848;&#x6E05;&#x9664;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x8A71;&#x8ACB;&#x958B;&#x555F;&#x8A3B;&#x89E3;&#x4E26;&#x6AA2;&#x67E5;RetentionDays&#x53C3;&#x6578;&#x8A2D;&#x5B9A;</span>
+<span class="hljs-comment"># find $BackupDir/*.tar.gz -maxdepth 1 -mtime +$RetentionDays -type f -delete</span>
 
 <span class="hljs-built_in">exit</span>
 </code></pre>
@@ -1000,21 +1086,16 @@ drwxr-xr-x. 2 root root  24576 Mar 29 12:00 backup
 -rw-r--r--. 1 root root 222572 Mar 29 12:33 bimap-202303291200.process
 drwxr-xr-x. 2 root root      6 Mar 29 12:00 sent
 </code></pre>
-<p>&#x6574;&#x9EDE;&#x6703;&#x81EA;&#x52D5;&#x5C07;&#x4E0A;&#x500B;&#x5C0F;&#x6642;&#x6A94;&#x6848;&#x50B3;&#x9001;&#x5F8C;&#x79FB;&#x52D5;&#x5230; backup &#x8CC7;&#x6599;&#x593E;&#xFF0C;&#x6628;&#x5929;&#x7684;&#x6A94;&#x6848;&#x6703;&#x81EA;&#x52D5;&#x58D3;&#x7E2E;&#x70BA; tar.gz &#x6A94;&#xFF1A;</p>
-<pre><code class="lang-plaintext">[root@bimap sardata]$ ll /home/bimap/sardata/backup
+<p>&#x6574;&#x9EDE;&#x6703;&#x81EA;&#x52D5;&#x5C07;&#x4E0A;&#x500B;&#x5C0F;&#x6642;&#x6A94;&#x6848;&#x50B3;&#x9001;&#x5F8C;&#x79FB;&#x52D5;&#x5230; backup &#x8CC7;&#x6599;&#x593E;&#xFF0C;&#x6628;&#x5929;&#x7684;&#x6A94;&#x6848;&#x6703;&#x81EA;&#x52D5;&#x58D3;&#x7E2E;&#x70BA; tar.gz &#x6A94;&#xFF1A;
+```plaintext
+[root@bimap sardata]$ ll /home/bimap/sardata/backup
 -rw-r--r--. 1 root root 1064377 Mar 24 01:00 bimap-20230323.tar.gz
 -rw-r--r--. 1 root root 1064810 Mar 25 01:00 bimap-20230324.tar.gz
 -rw-r--r--. 1 root root 1076652 Mar 26 01:00 bimap-20230325.tar.gz
 -rw-r--r--. 1 root root 1083895 Mar 27 01:00 bimap-20230326.tar.gz
 -rw-r--r--. 1 root root 1317158 Mar 28 01:00 bimap-20230327.tar.gz
 -rw-r--r--. 1 root root 1443695 Mar 29 01:00 bimap-20230328.tar.gz
--rw-r--r--. 1 root root   48998 Mar 29 01:00 bimap-202303290000.cpu
--rw-r--r--. 1 root root   50010 Mar 29 01:00 bimap-202303290000.disk
--rw-r--r--. 1 root root   34158 Mar 29 01:00 bimap-202303290000.diskio
--rw-r--r--. 1 root root    5378 Mar 29 01:00 bimap-202303290000.mem
--rw-r--r--. 1 root root   18864 Mar 29 01:00 bimap-202303290000.network
--rw-r--r--. 1 root root  397305 Mar 29 01:00 bimap-202303290000.process
-</code></pre>
+-rw-r--r--. 1</p>
 
                                 
                                 </section>
@@ -1054,7 +1135,7 @@ drwxr-xr-x. 2 root root      6 Mar 29 12:00 sent
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sysstat","level":"1.3.6","depth":2,"next":{"title":"入門指南","level":"1.4","depth":1,"ref":"","articles":[{"title":"登入系統","level":"1.4.1","depth":2,"path":"guide/入門指南/登入系統.md","ref":"guide/入門指南/登入系統.md","articles":[]}]},"previous":{"title":"Njmon","level":"1.3.5","depth":2,"path":"guide/數據收集/njmon.md","ref":"guide/數據收集/njmon.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/數據收集/sysstat.md","mtime":"2024-08-06T05:39:00.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-07T07:38:04.924Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sysstat","level":"1.3.6","depth":2,"next":{"title":"入門指南","level":"1.4","depth":1,"ref":"","articles":[{"title":"登入系統","level":"1.4.1","depth":2,"path":"guide/入門指南/登入系統.md","ref":"guide/入門指南/登入系統.md","articles":[]}]},"previous":{"title":"Njmon","level":"1.3.5","depth":2,"path":"guide/數據收集/njmon.md","ref":"guide/數據收集/njmon.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/數據收集/sysstat.md","mtime":"2024-08-07T08:15:45.459Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-07T08:16:22.649Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
