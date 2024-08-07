@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>njmon · GitBook</title>
+        <title>Njmon · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -56,6 +56,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="sysstat.html" />
     
     
     <link rel="prev" href="nmon.html" />
@@ -172,12 +174,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="sysstat.html">
+        <li class="chapter " data-level="1.3.1" data-path="安裝FTP.html">
             
-                <a href="sysstat.html">
+                <a href="安裝FTP.html">
             
                     
-                    sysstat
+                    安裝FTP
             
                 </a>
             
@@ -185,7 +187,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="logman.html">
+        <li class="chapter " data-level="1.3.2" data-path="設定SCP.html">
+            
+                <a href="設定SCP.html">
+            
+                    
+                    設定SCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="logman.html">
             
                 <a href="logman.html">
             
@@ -198,12 +213,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="nmon.html">
+        <li class="chapter " data-level="1.3.4" data-path="nmon.html">
             
                 <a href="nmon.html">
             
                     
-                    nmon
+                    Nmon
             
                 </a>
             
@@ -211,12 +226,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.4" data-path="njmon.html">
+        <li class="chapter active" data-level="1.3.5" data-path="njmon.html">
             
                 <a href="njmon.html">
             
                     
-                    njmon
+                    Njmon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="sysstat.html">
+            
+                <a href="sysstat.html">
+            
+                    
+                    Sysstat
             
                 </a>
             
@@ -301,20 +329,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../安裝指南/安裝FTP.html">
-            
-                <a href="../安裝指南/安裝FTP.html">
-            
-                    
-                    安裝FTP
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.4" data-path="../安裝指南/安裝Grafana.html">
+        <li class="chapter " data-level="1.5.3" data-path="../安裝指南/安裝Grafana.html">
             
                 <a href="../安裝指南/安裝Grafana.html">
             
@@ -871,7 +886,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >njmon</a>
+        <a href="../.." >Njmon</a>
     </h1>
 </div>
 
@@ -886,103 +901,206 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="njmon-&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;">Njmon &#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;</h3>
-<h4 id="1-&#x5B89;&#x88DD;-njmon">1. &#x5B89;&#x88DD; Njmon</h4>
+                                <h2 id="njmon-&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;">Njmon &#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;</h2>
+<p>Njmon &#x662F; Nmon &#x7684;&#x6539;&#x9032;&#x7248;&#xFF0C;&#x9069;&#x7528;&#x65BC; Linux &#x7CFB;&#x7D71;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x8C50;&#x5BCC;&#x7684;&#x6027;&#x80FD;&#x6578;&#x64DA;&#x6536;&#x96C6;&#x548C;&#x5206;&#x6790;&#x529F;&#x80FD;&#x3002;&#x5B83;&#x80FD;&#x5920;&#x6536;&#x96C6; CPU&#x3001;&#x8A18;&#x61B6;&#x9AD4;&#x3001;&#x78C1;&#x789F;&#x3001;&#x7DB2;&#x8DEF;&#x7B49;&#x591A;&#x65B9;&#x9762;&#x7684;&#x5373;&#x6642;&#x7CFB;&#x7D71;&#x6027;&#x80FD;&#x6578;&#x64DA;&#xFF0C;&#x4E26;&#x652F;&#x6301;&#x5C07;&#x6578;&#x64DA;&#x767C;&#x9001;&#x5230;&#x5404;&#x7A2E;&#x6578;&#x64DA;&#x5EAB;&#xFF0C;&#x5982; InfluxDB&#x3002;Njmon &#x7279;&#x5225;&#x9069;&#x5408;&#x73FE;&#x4EE3;&#x5316;&#x7CFB;&#x7D71;&#x74B0;&#x5883;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x591A;&#x9748;&#x6D3B;&#x6027;&#x548C;&#x64F4;&#x5C55;&#x6027;&#x3002;</p>
+<p>&#x5927;&#x591A;&#x6578; IBM &#x6A5F;&#x5668;&#x5167;&#x5EFA;&#x4E86; Nmon&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x53E6;&#x5916;&#x5B89;&#x88DD;&#xFF0C;&#x6211;&#x5011;&#x5EFA;&#x8B70;&#x4F7F;&#x7528;&#x6539;&#x9032;&#x7248;&#x7684; njmon&#x3002;&#x8ACB;&#x53C3;&#x8003;&#x4EE5;&#x4E0B;&#x6B65;&#x9A5F;&#x4F86;&#x5B89;&#x88DD;&#x548C;&#x914D;&#x7F6E; njmon&#x3002;</p>
+<h2 id="1-&#x5B89;&#x88DD;-njmon">1. &#x5B89;&#x88DD; Njmon</h2>
 <p>&#x4E0B;&#x8F09;&#x4E26;&#x5B89;&#x88DD; Njmon&#xFF1A;</p>
 <pre><code class="lang-bash">wget http://sourceforge.net/projects/nmon/files/njmon_linux_binaries_v80.zip
-unzip njmon_linux_binaries_v80.zip
+mkdir njmon_files
+unzip njmon_linux_binaries_v80.zip <span class="hljs-_">-d</span> njmon_files
 </code></pre>
 <p>&#x5982;&#x679C;&#x7121;&#x6CD5;&#x89E3;&#x58D3;&#xFF0C;&#x8ACB;&#x5B89;&#x88DD; <code>zip</code> &#x547D;&#x4EE4;&#xFF1A;</p>
 <pre><code class="lang-bash">sudo apt install zip
 </code></pre>
 <p>&#x89E3;&#x58D3;&#x7E2E;&#x5F8C;&#x76EE;&#x9304;&#x7D50;&#x69CB;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-plaintext">ninstall                      njmon_RHEL8_ppc64le_v80   njmon_SLES15_ppc64le_v80    njmon_Ubuntu21_x86_64_v80
-njmon.1.gz                    njmon_RHEL8_x86_64_v80    njmon_SLES15_x86_64_v80     njmon_Ubuntu22_x86_64_v80
-njmon_linux_binaries_v80.zip  njmon_SLES12_ppc64le_v80  njmon_Ubuntu20_ppc64le_v80
+<pre><code class="lang-plaintext">njmon_files/
+&#x251C;&#x2500;&#x2500; ninstall
+&#x251C;&#x2500;&#x2500; njmon.1.gz
+&#x251C;&#x2500;&#x2500; njmon_RHEL8_ppc64le_v80
+&#x251C;&#x2500;&#x2500; njmon_RHEL8_x86_64_v80
+&#x251C;&#x2500;&#x2500; njmon_SLES12_ppc64le_v80
+&#x251C;&#x2500;&#x2500; njmon_SLES15_ppc64le_v80
+&#x251C;&#x2500;&#x2500; njmon_SLES15_x86_64_v80
+&#x251C;&#x2500;&#x2500; njmon_Ubuntu20_ppc64le_v80
+&#x251C;&#x2500;&#x2500; njmon_Ubuntu21_x86_64_v80
+&#x251C;&#x2500;&#x2500; njmon_Ubuntu22_x86_64_v80
+&#x2514;&#x2500;&#x2500; njmon_linux_binaries_v80.zip
 </code></pre>
 <p>&#x57F7;&#x884C;&#x5B89;&#x88DD;&#x8173;&#x672C;&#xFF1A;</p>
-<pre><code class="lang-bash">chmod +x ninstall
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> njmon_files
+chmod +x ninstall
 ./ninstall
 </code></pre>
 <p>&#x5982;&#x679C;&#x6C92;&#x6709;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x7684;&#x7CFB;&#x7D71;&#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x9078;&#x64C7;&#x63A5;&#x8FD1;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x8907;&#x88FD;&#x5230; <code>/usr/local/bin</code>&#xFF0C;&#x91CD;&#x65B0;&#x547D;&#x540D;&#x70BA; <code>njmon</code>&#xFF1A;</p>
-<pre><code class="lang-bash">sudo mv <span class="hljs-variable">${your_version_filename}</span> /usr/<span class="hljs-built_in">local</span>/bin/njmon
+<pre><code class="lang-bash">sudo mv njmon_files/<span class="hljs-variable">${your_version_filename}</span> /usr/<span class="hljs-built_in">local</span>/bin/njmon
 sudo chmod +x /usr/<span class="hljs-built_in">local</span>/bin/njmon
 </code></pre>
-<h4 id="2-&#x5EFA;&#x7ACB;-njmon-&#x65E5;&#x8A8C;&#x5B58;&#x653E;&#x76EE;&#x9304;">2. &#x5EFA;&#x7ACB; Njmon &#x65E5;&#x8A8C;&#x5B58;&#x653E;&#x76EE;&#x9304;</h4>
-<pre><code class="lang-bash">mkdir /home/bimap/njmondata
+<h2 id="2-&#x5EFA;&#x7ACB;-njmon-&#x65E5;&#x8A8C;&#x5B58;&#x653E;&#x76EE;&#x9304;">2. &#x5EFA;&#x7ACB; Njmon &#x65E5;&#x8A8C;&#x5B58;&#x653E;&#x76EE;&#x9304;</h2>
+<pre><code class="lang-bash">mkdir -p /home/bimap/njmondata
 </code></pre>
-<h4 id="3-&#x9A57;&#x8B49;-njmon-&#x529F;&#x80FD;">3. &#x9A57;&#x8B49; Njmon &#x529F;&#x80FD;</h4>
-<p>&#x5148;&#x8A2D;&#x5B9A;&#x53C3;&#x6578;&#x9032;&#x884C;&#x624B;&#x52D5;&#x6E2C;&#x8A66;&#xFF1A;</p>
-<pre><code class="lang-bash">/usr/<span class="hljs-built_in">local</span>/bin/njmon -M -P -b -t 1 <span class="hljs-_">-s</span> 5 -c 2 <span class="hljs-_">-f</span> -m /home/bimap/njmondata
-</code></pre>
-<p>&#x6AA2;&#x67E5;&#x751F;&#x6210;&#x7684;&#x6A94;&#x6848;&#xFF1A;</p>
-<pre><code class="lang-plaintext">$ ls /home/bimap/njmondata
-hostname_20230327_2200.err
-hostname_20230327_2200.influxlp
-</code></pre>
-<h4 id="4-&#x5EFA;&#x7ACB;&#x81EA;&#x52D5;&#x5316;&#x6536;&#x96C6;&#x8173;&#x672C;">4. &#x5EFA;&#x7ACB;&#x81EA;&#x52D5;&#x5316;&#x6536;&#x96C6;&#x8173;&#x672C;</h4>
+<h2 id="3-&#x5EFA;&#x7ACB;&#x81EA;&#x52D5;&#x5316;&#x6536;&#x96C6;&#x8173;&#x672C;">3. &#x5EFA;&#x7ACB;&#x81EA;&#x52D5;&#x5316;&#x6536;&#x96C6;&#x8173;&#x672C;</h2>
 <p>&#x7DE8;&#x8F2F;&#x8173;&#x672C;&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-bash">vim /home/bimap/bin/ipoc_njmon.sh
+<pre><code class="lang-bash">mkdir -p /home/bimap/bin
+vim /home/bimap/bin/ipoc_njmon.sh
 </code></pre>
+<h3 id="&#x9700;&#x8981;&#x8ABF;&#x6574;&#x7684;&#x53C3;&#x6578;">&#x9700;&#x8981;&#x8ABF;&#x6574;&#x7684;&#x53C3;&#x6578;</h3>
+<ul>
+<li><code>Seconds</code>: &#x6BCF;&#x6B21;&#x6536;&#x96C6;&#x9593;&#x9694;&#x7684;&#x79D2;&#x6578;&#x3002;&#x9ED8;&#x8A8D;&#x70BA;60&#x79D2;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x64DA;&#x9700;&#x8981;&#x9032;&#x884C;&#x4FEE;&#x6539;&#x3002;</li>
+<li><code>Count</code>: &#x6BCF;&#x6B21;&#x6536;&#x96C6;&#x6578;&#x64DA;&#x7684;&#x6B21;&#x6578;&#x3002;&#x9ED8;&#x8A8D;&#x70BA;60&#x6B21;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x64DA;&#x9700;&#x8981;&#x9032;&#x884C;&#x4FEE;&#x6539;&#x3002;</li>
+<li><code>RetentionDays</code>: &#x65E5;&#x8A8C;&#x4FDD;&#x7559;&#x7684;&#x5929;&#x6578;&#x3002;&#x9ED8;&#x8A8D;&#x70BA;30&#x5929;&#xFF0C;&#x8D85;&#x904E;&#x9019;&#x500B;&#x5929;&#x6578;&#x7684;&#x6A94;&#x6848;&#x5C07;&#x88AB;&#x522A;&#x9664;&#x3002;</li>
+<li><code>LogDir</code>: &#x65E5;&#x8A8C;&#x5B58;&#x653E;&#x76EE;&#x9304;&#x3002;&#x9ED8;&#x8A8D;&#x70BA; <code>/home/bimap/njmondata</code>&#x3002;</li>
+<li><code>UploadDir</code>: &#x65E5;&#x8A8C;&#x4E0A;&#x50B3;&#x76EE;&#x9304;&#x3002;&#x9ED8;&#x8A8D;&#x70BA; <code>/home/sftpuser/master</code>&#x3002;</li>
+<li><code>SCP_TARGET</code>: SCP &#x4E0A;&#x50B3;&#x76EE;&#x6A19;&#x8DEF;&#x5F91;&#x3002;</li>
+<li><code>FTPURL</code>, <code>FTPUSER</code>, <code>FTPPASS</code>: FTP &#x4F3A;&#x670D;&#x5668;&#x5730;&#x5740;&#x3001;&#x4F7F;&#x7528;&#x8005;&#x540D;&#x548C;&#x5BC6;&#x78BC;&#x3002;</li>
+<li><code>UPLOAD_METHOD</code>: &#x4E0A;&#x50B3;&#x65B9;&#x6CD5;&#x3002;&#x53EF;&#x4EE5;&#x9078;&#x64C7; <code>ftp</code>&#x3001;<code>mv</code> &#x6216; <code>scp</code>&#xFF0C;&#x9ED8;&#x8A8D;&#x70BA; <code>scp</code>&#x3002;</li>
+</ul>
 <p><code>ipoc_njmon.sh</code> &#x5167;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash</span>
-<span class="hljs-built_in">set</span> -x
 <span class="hljs-built_in">export</span> LC_ALL=C
 
-<span class="hljs-comment">######################################</span>
-<span class="hljs-comment">###             set env            ###</span>
-<span class="hljs-comment">######################################</span>
-Host=`hostname`
-Seconds=60
-Count=60
-RetentionDays=30
-Yesterday=$(perl -MPOSIX -le <span class="hljs-string">&apos;print strftime &quot;%Y%m%d&quot;, localtime(time()-86400)&apos;</span>)
-ThisHour=$(perl -MPOSIX -le <span class="hljs-string">&apos;print strftime &quot;%Y%m%d_%H%M&quot;, localtime(time())&apos;</span>)
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment">########        &#x8A2D;&#x5B9A;&#x74B0;&#x5883;&#x8B8A;&#x6578;               ########</span>
+<span class="hljs-comment">#################################################</span>
+Host=$(hostname)
+Seconds=<span class="hljs-variable">${1:-60}</span>   <span class="hljs-comment"># &#x9ED8;&#x8A8D;&#x6BCF;&#x6B21;&#x9593;&#x9694;60&#x79D2;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x904E;&#x53C3;&#x6578;&#x50B3;&#x905E;&#x4FEE;&#x6539;</span>
+Count=<span class="hljs-variable">${2:-60}</span>     <span class="hljs-comment"># &#x9ED8;&#x8A8D;&#x6BCF;60&#x6B21;&#x6536;&#x96C6;&#x6578;&#x64DA;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x904E;&#x53C3;&#x6578;&#x50B3;&#x905E;&#x4FEE;&#x6539;</span>
+RetentionDays=30   <span class="hljs-comment"># &#x8D85;&#x904E;30&#x5929;&#x7684;&#x6A94;&#x6848;&#x4E0D;&#x505A;&#x4FDD;&#x7559;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x8A71;&#x8ACB;&#x958B;&#x555F;&#x5C3E;&#x6BB5;&#x7684;&#x8A3B;&#x89E3;</span>
+Yesterday=$(perl -MPOSIX -le <span class="hljs-string">&apos;print strftime &quot;%y%m%d&quot;, localtime(time()-86400)&apos;</span>)
 LogDir=<span class="hljs-string">&quot;/home/bimap/njmondata&quot;</span>
-SentDir=<span class="hljs-variable">$LogDir</span>/sent
-BackupDir=<span class="hljs-variable">$LogDir</span>/backup
-UploadDir=<span class="hljs-string">&quot;/home/parser/upload/master&quot;</span>
+SentDir=<span class="hljs-string">&quot;<span class="hljs-variable">$LogDir</span>/sent&quot;</span>
+BackupDir=<span class="hljs-string">&quot;<span class="hljs-variable">$LogDir</span>/backup&quot;</span>
+UploadDir=<span class="hljs-string">&quot;/home/sftpuser/master&quot;</span>  <span class="hljs-comment"># &#x65E5;&#x8A8C;&#x4E0A;&#x50B3;&#x8DEF;&#x5F91;</span>
 
-<span class="hljs-comment">#################################################</span>
-<span class="hljs-comment">########         collect command         ########</span>
-<span class="hljs-comment">#################################################</span>
-<span class="hljs-keyword">if</span> [ ! <span class="hljs-_">-d</span> <span class="hljs-variable">$SentDir</span> ]; <span class="hljs-keyword">then</span> mkdir <span class="hljs-variable">$SentDir</span>; <span class="hljs-keyword">fi</span>
-<span class="hljs-keyword">if</span> [ ! <span class="hljs-_">-d</span> <span class="hljs-variable">$BackupDir</span> ]; <span class="hljs-keyword">then</span> mkdir <span class="hljs-variable">$BackupDir</span>; <span class="hljs-keyword">fi</span>
+<span class="hljs-comment"># SCP &#x76EE;&#x6A19;&#x8DEF;&#x5F91;&#x8A2D;&#x5B9A;</span>
+SCP_TARGET=<span class="hljs-string">&quot;bimap@10.99.1.106:<span class="hljs-variable">$UploadDir</span>&quot;</span>
 
-<span class="hljs-built_in">cd</span> <span class="hljs-variable">$LogDir</span>
-/usr/<span class="hljs-built_in">local</span>/bin/njmon -M -P -b -t 1 <span class="hljs-_">-s</span> <span class="hljs-variable">$Seconds</span> -c <span class="hljs-variable">$Count</span> <span class="hljs-_">-f</span> -m <span class="hljs-variable">$LogDir</span> &gt; /dev/null 2&gt;&amp;1
-sleep 10s
-rm -rf *.err
-Files=$(ls | grep -v <span class="hljs-variable">$ThisHour</span> | grep .json)
-mv <span class="hljs-variable">$Files</span> <span class="hljs-variable">$SentDir</span>
+<span class="hljs-comment"># FTP &#x8A2D;&#x5B9A;&#x53C3;&#x6578;</span>
+FTPURL=<span class="hljs-string">&quot;10.99.1.106&quot;</span>
+FTPUSER=<span class="hljs-string">&quot;sftpuser&quot;</span>
+FTPPASS=<span class="hljs-string">&quot;1qaz2wsx&quot;</span>
 
-<span class="hljs-comment">#################################################</span>
-<span class="hljs-comment">########      HourAgoLog to uploadDir    ########</span>
-<span class="hljs-comment">#################################################</span>
-scp <span class="hljs-variable">$SentDir</span>/*.* bimap@10.99.1.55:<span class="hljs-variable">$UploadDir</span> &amp;&amp; mv <span class="hljs-variable">$SentDir</span>/*.* <span class="hljs-variable">$BackupDir</span>
+<span class="hljs-comment"># &#x4E0A;&#x50B3;&#x65B9;&#x6CD5;&#x9078;&#x64C7;&#xFF1A;&#x53EF;&#x9078; &quot;ftp&quot;&#x3001;&quot;mv&quot; &#x6216; &quot;scp&quot;</span>
+UPLOAD_METHOD=<span class="hljs-string">&quot;scp&quot;</span>
 
-<span class="hljs-comment">#################################################</span>
-<span class="hljs-comment">########          zip and backup         ########</span>
-<span class="hljs-comment">#################################################</span>
-<span class="hljs-built_in">cd</span> <span class="hljs-variable">$BackupDir</span>
-<span class="hljs-keyword">if</span> ls *<span class="hljs-variable">$Yesterday</span>*.json 1&gt; /dev/null 2&gt;&amp;1; <span class="hljs-keyword">then</span>
-    tar -czvf `hostname`<span class="hljs-string">&quot;-&quot;</span><span class="hljs-variable">$Yesterday</span>.tar.gz *<span class="hljs-variable">$Yesterday</span>*.json &amp;&amp; rm -rf *<span class="hljs-variable">$Yesterday</span>*.json
+<span class="hljs-keyword">if</span> [[ ! <span class="hljs-string">&quot; ftp mv scp &quot;</span> =~ <span class="hljs-string">&quot; <span class="hljs-variable">${UPLOAD_METHOD}</span> &quot;</span> ]]; <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x672A;&#x77E5;&#x7684;&#x4E0A;&#x50B3;&#x65B9;&#x5F0F;: <span class="hljs-variable">$UPLOAD_METHOD</span>. &#x8ACB;&#x9078;&#x64C7; &apos;ftp&apos;, &apos;mv&apos; &#x6216; &apos;scp&apos;.&quot;</span>
+  <span class="hljs-built_in">exit</span> 1
 <span class="hljs-keyword">fi</span>
 
-<span class="hljs-comment"># &#x5B9A;&#x671F;&#x5C07;&#x6A94;&#x6848;&#x6E05;&#x9664;</span>
-<span class="hljs-comment">#find $BackupDir/*.tar.gz -maxdepth 1 -mtime +$RetentionDays -type f -delete</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x4E0A;&#x50B3;&#x65B9;&#x5F0F;: <span class="hljs-variable">$UPLOAD_METHOD</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x6536;&#x96C6;&#x9593;&#x9694;: <span class="hljs-variable">$Seconds</span> &#x79D2;, &#x6536;&#x96C6;&#x6B21;&#x6578;: <span class="hljs-variable">$Count</span> &#x6B21;&quot;</span>
+
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment">########         &#x57F7;&#x884C;&#x6536;&#x96C6;&#x547D;&#x4EE4;              ########</span>
+<span class="hljs-comment">#################################################</span>
+mkdir -p <span class="hljs-variable">$SentDir</span>
+mkdir -p <span class="hljs-variable">$BackupDir</span>
+mkdir -p <span class="hljs-variable">$LogDir</span>
+
+<span class="hljs-built_in">cd</span> <span class="hljs-variable">$LogDir</span>
+<span class="hljs-comment"># &#x7372;&#x53D6;&#x820A;&#x7684;nmon&#x6587;&#x4EF6;</span>
+Files=$(ls *.json 2&gt; /dev/null)
+<span class="hljs-keyword">if</span> [ -z <span class="hljs-string">&quot;<span class="hljs-variable">$Files</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x6C92;&#x6709;&#x820A;&#x7684; njmon &#x6587;&#x4EF6;&#x9700;&#x8981;&#x79FB;&#x52D5;&quot;</span>
+<span class="hljs-keyword">else</span>
+  <span class="hljs-comment"># &#x5C07;&#x820A;&#x6587;&#x4EF6;&#x79FB;&#x52D5;&#x5230;SentDir</span>
+  mv <span class="hljs-variable">$Files</span> <span class="hljs-variable">$SentDir</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># &#x6536;&#x96C6;&#x65B0;&#x7684;nmon&#x6587;&#x4EF6;</span>
+/usr/<span class="hljs-built_in">local</span>/bin/njmon -M -P -b -t 1 <span class="hljs-_">-s</span> <span class="hljs-variable">$Seconds</span> -c <span class="hljs-variable">$Count</span> <span class="hljs-_">-f</span> -m <span class="hljs-variable">$LogDir</span> &gt; /dev/null 2&gt;&amp;1
+sleep 10
+rm -rf *.err
+
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment">########      &#x6839;&#x64DA;&#x9078;&#x64C7;&#x7684;&#x65B9;&#x5F0F;&#x4E0A;&#x50B3;&#x6587;&#x4EF6;         ########</span>
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-built_in">cd</span> <span class="hljs-variable">$SentDir</span>
+
+<span class="hljs-keyword">case</span> <span class="hljs-variable">$UPLOAD_METHOD</span> <span class="hljs-keyword">in</span>
+  <span class="hljs-string">&quot;ftp&quot;</span>)
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$(ls -A $SentDir)</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+      ftp -inv <span class="hljs-variable">$FTPURL</span> &lt;&lt; EOF &gt; <span class="hljs-variable">$LogDir</span>/ftplog.txt
+user <span class="hljs-variable">$FTPUSER</span> <span class="hljs-variable">$FTPPASS</span>
+binary
+mput *
+<span class="hljs-built_in">bye</span>
+EOF
+      msg=$(grep <span class="hljs-string">&quot;complete&quot;</span> <span class="hljs-variable">$LogDir</span>/ftplog.txt)
+      <span class="hljs-keyword">if</span> [ -n <span class="hljs-string">&quot;<span class="hljs-variable">$msg</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+          mv <span class="hljs-variable">$SentDir</span>/*.* <span class="hljs-variable">$BackupDir</span>
+      <span class="hljs-keyword">fi</span>
+      rm -rf <span class="hljs-variable">$LogDir</span>/ftplog.txt
+    <span class="hljs-keyword">fi</span>
+    ;;
+
+  <span class="hljs-string">&quot;mv&quot;</span>)
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$(ls -A $SentDir)</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+      mv <span class="hljs-variable">$SentDir</span>/* <span class="hljs-variable">$UploadDir</span>
+    <span class="hljs-keyword">fi</span>
+    ;;
+
+  <span class="hljs-string">&quot;scp&quot;</span>)
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">&quot;<span class="hljs-variable">$(ls -A $SentDir)</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+      scp * <span class="hljs-variable">$SCP_TARGET</span>
+      <span class="hljs-keyword">if</span> [ $? <span class="hljs-_">-eq</span> 0 ]; <span class="hljs-keyword">then</span>
+          mv <span class="hljs-variable">$SentDir</span>/*.* <span class="hljs-variable">$BackupDir</span>
+      <span class="hljs-keyword">fi</span>
+    <span class="hljs-keyword">fi</span>
+    ;;
+
+  *)
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x672A;&#x77E5;&#x7684;&#x4E0A;&#x50B3;&#x65B9;&#x5F0F;: <span class="hljs-variable">$UPLOAD_METHOD</span>&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+    ;;
+<span class="hljs-keyword">esac</span>
+
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment">########          &#x58D3;&#x7E2E;&#x4E26;&#x5099;&#x4EFD;             ########</span>
+<span class="hljs-comment">#################################################</span>
+<span class="hljs-comment"># 1. &#x6AA2;&#x67E5;&#x4E26;&#x5C07;&#x6628;&#x5929;&#x7684;&#x6A94;&#x6848;&#xFF0C;&#x4FDD;&#x5B58;&#x6210;&#x4E00;&#x4EFD;&#x58D3;&#x7E2E;&#x6A94;</span>
+<span class="hljs-built_in">cd</span> <span class="hljs-variable">$BackupDir</span>
+<span class="hljs-keyword">if</span> ls *<span class="hljs-variable">$Yesterday</span>*.json 1&gt; /dev/null 2&gt;&amp;1; <span class="hljs-keyword">then</span>
+    <span class="hljs-comment"># &#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5C07;&#x8A72;&#x6A94;&#x6848;&#x58D3;&#x7E2E;&#x8D77;&#x4F86;</span>
+    tar -czvf <span class="hljs-string">&quot;<span class="hljs-variable">${Host}</span>-<span class="hljs-variable">${Yesterday}</span>.tar.gz&quot;</span> *<span class="hljs-variable">$Yesterday</span>*.json &amp;&amp; rm -rf *<span class="hljs-variable">$Yesterday</span>*.json
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># 2. &#x5B9A;&#x671F;&#x5C07;&#x6A94;&#x6848;&#x6E05;&#x9664;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x8A71;&#x8ACB;&#x958B;&#x555F;&#x8A3B;&#x89E3;&#x4E26;&#x6AA2;&#x67E5;RetentionDays&#x53C3;&#x6578;&#x8A2D;&#x5B9A;</span>
+<span class="hljs-comment"># find $BackupDir/*.tar.gz -maxdepth 1 -mtime +$RetentionDays -type f -delete</span>
 
 <span class="hljs-built_in">exit</span>
 </code></pre>
 <p>&#x6388;&#x4E88;&#x8173;&#x672C;&#x57F7;&#x884C;&#x6B0A;&#x9650;&#xFF1A;</p>
 <pre><code class="lang-bash">chmod +x /home/bimap/bin/ipoc_njmon.sh
 </code></pre>
-<h4 id="5-&#x8A2D;&#x5B9A;-crontab-&#x6BCF;&#x5C0F;&#x6642;&#x57F7;&#x884C;&#x4E00;&#x6B21;&#x81EA;&#x52D5;&#x5316;&#x6536;&#x96C6;&#x8173;&#x672C;">5. &#x8A2D;&#x5B9A; crontab &#x6BCF;&#x5C0F;&#x6642;&#x57F7;&#x884C;&#x4E00;&#x6B21;&#x81EA;&#x52D5;&#x5316;&#x6536;&#x96C6;&#x8173;&#x672C;</h4>
+<h2 id="4-&#x6E2C;&#x8A66;&#x8173;&#x672C;">4. &#x6E2C;&#x8A66;&#x8173;&#x672C;</h2>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x6E2C;&#x8A66;&#x57F7;&#x884C;&#x8173;&#x672C;&#x6703;&#x986F;&#x793A;&#x6C92;&#x6709;&#x820A;&#x7684; <code>.njmon</code> &#x6587;&#x4EF6;&#x9700;&#x8981;&#x79FB;&#x52D5;&#xFF0C;&#x9019;&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF0C;&#x56E0;&#x70BA;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x57F7;&#x884C;&#x6642;&#x9084;&#x6C92;&#x6709;&#x820A;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-bash">root@bimap-ipoc-2:/home/bimap/bin<span class="hljs-comment"># ./ipoc_njmon.sh 5 2</span>
+&#x4E0A;&#x50B3;&#x65B9;&#x5F0F;: mv
+&#x6536;&#x96C6;&#x9593;&#x9694;: 5 &#x79D2;, &#x6536;&#x96C6;&#x6B21;&#x6578;: 2 &#x6B21;
+&#x6C92;&#x6709;&#x820A;&#x7684; njmon &#x6587;&#x4EF6;&#x9700;&#x8981;&#x79FB;&#x52D5;
+</code></pre>
+<p>&#x7B2C;&#x4E8C;&#x6B21;&#x57F7;&#x884C;&#x6642;&#x61C9;&#x8A72;&#x6703;&#x6B63;&#x5E38;&#x79FB;&#x52D5;&#x548C;&#x4E0A;&#x50B3;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-bash">root@bimap-ipoc-2:/home/bimap/bin<span class="hljs-comment"># ./ipoc_njmon.sh 5 2</span>
+&#x4E0A;&#x50B3;&#x65B9;&#x5F0F;: mv
+&#x6536;&#x96C6;&#x9593;&#x9694;: 5 &#x79D2;, &#x6536;&#x96C6;&#x6B21;&#x6578;: 2 &#x6B21;
+</code></pre>
+<p>&#x6210;&#x529F;&#x5F8C;&#xFF0C;&#x518D;&#x8A2D;&#x5B9A; crontab &#x5B9A;&#x671F;&#x57F7;&#x884C;&#x81EA;&#x52D5;&#x5316;&#x6536;&#x96C6;&#x8173;&#x672C;&#x3002;</p>
+<h2 id="5-&#x8A2D;&#x5B9A;-crontab-&#x5B9A;&#x671F;&#x57F7;&#x884C;">5. &#x8A2D;&#x5B9A; crontab &#x5B9A;&#x671F;&#x57F7;&#x884C;</h2>
 <p>&#x7DE8;&#x8F2F; crontab&#xFF1A;</p>
 <pre><code class="lang-bash">crontab <span class="hljs-_">-e</span>
 </code></pre>
-<p>&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x884C;&#xFF1A;</p>
-<pre><code class="lang-plaintext">0 * * * * /home/bimap/bin/ipoc_njmon.sh
+<p>&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x884C;&#xFF0C;&#x8A2D;&#x5B9A;&#x6BCF;60&#x5206;&#x9418;&#x57F7;&#x884C;&#x4E00;&#x6B21;&#x81EA;&#x52D5;&#x5316;&#x6536;&#x96C6;&#x8173;&#x672C;&#xFF1A;</p>
+<pre><code class="lang-plaintext">0 * * * * /home/bimap/bin/ipoc_njmon.sh 60 60 &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<h3 id="&#x65E5;&#x8A8C;&#x6A94;&#x6848;&#x7BC4;&#x4F8B;">&#x65E5;&#x8A8C;&#x6A94;&#x6848;&#x7BC4;&#x4F8B;</h3>
+<p>&#x57F7;&#x884C;&#x7576;&#x4E0B;&#x5C0F;&#x6642;&#x6703;&#x7522;&#x751F; Njmon &#x65E5;&#x8A8C;&#x6A94;&#x6848;&#xFF0C;&#x4E26;&#x4E14;&#x6BCF;&#x5929;&#x5C07;&#x65E5;&#x8A8C;&#x6A94;&#x6848;&#x58D3;&#x7E2E;&#x5132;&#x5B58;&#xFF1A;</p>
+<pre><code class="lang-plaintext">[root@bimap nmondata]$ ls /home/bimap/njmondata/backup
+bimap-230301.tar.gz
+bimap-230302.tar.gz
+bimap-230303.tar.gz
+bimap-230304.tar.gz
 </code></pre>
 
                                 
@@ -1011,10 +1129,14 @@ scp <span class="hljs-variable">$SentDir</span>/*.* bimap@10.99.1.55:<span class
 
             
                 
-                <a href="nmon.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: nmon">
+                <a href="nmon.html" class="navigation navigation-prev " aria-label="Previous page: Nmon">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="sysstat.html" class="navigation navigation-next " aria-label="Next page: Sysstat">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1023,7 +1145,7 @@ scp <span class="hljs-variable">$SentDir</span>/*.* bimap@10.99.1.55:<span class
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"njmon","level":"1.3.4","depth":2,"next":{"title":"入門指南","level":"1.4","depth":1,"ref":"","articles":[{"title":"登入系統","level":"1.4.1","depth":2,"path":"guide/入門指南/登入系統.md","ref":"guide/入門指南/登入系統.md","articles":[]}]},"previous":{"title":"nmon","level":"1.3.3","depth":2,"path":"guide/數據收集/nmon.md","ref":"guide/數據收集/nmon.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/數據收集/njmon.md","mtime":"2024-08-06T05:39:40.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-06T05:54:57.405Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Njmon","level":"1.3.5","depth":2,"next":{"title":"Sysstat","level":"1.3.6","depth":2,"path":"guide/數據收集/sysstat.md","ref":"guide/數據收集/sysstat.md","articles":[]},"previous":{"title":"Nmon","level":"1.3.4","depth":2,"path":"guide/數據收集/nmon.md","ref":"guide/數據收集/nmon.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/數據收集/njmon.md","mtime":"2024-08-07T03:10:50.551Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-07T07:22:14.877Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

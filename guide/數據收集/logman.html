@@ -60,7 +60,7 @@
     <link rel="next" href="nmon.html" />
     
     
-    <link rel="prev" href="sysstat.html" />
+    <link rel="prev" href="設定SCP.html" />
     
 
     </head>
@@ -174,12 +174,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="sysstat.html">
+        <li class="chapter " data-level="1.3.1" data-path="安裝FTP.html">
             
-                <a href="sysstat.html">
+                <a href="安裝FTP.html">
             
                     
-                    sysstat
+                    安裝FTP
             
                 </a>
             
@@ -187,7 +187,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="logman.html">
+        <li class="chapter " data-level="1.3.2" data-path="設定SCP.html">
+            
+                <a href="設定SCP.html">
+            
+                    
+                    設定SCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="logman.html">
             
                 <a href="logman.html">
             
@@ -200,12 +213,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="nmon.html">
+        <li class="chapter " data-level="1.3.4" data-path="nmon.html">
             
                 <a href="nmon.html">
             
                     
-                    nmon
+                    Nmon
             
                 </a>
             
@@ -213,12 +226,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="njmon.html">
+        <li class="chapter " data-level="1.3.5" data-path="njmon.html">
             
                 <a href="njmon.html">
             
                     
-                    njmon
+                    Njmon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="sysstat.html">
+            
+                <a href="sysstat.html">
+            
+                    
+                    Sysstat
             
                 </a>
             
@@ -303,20 +329,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../安裝指南/安裝FTP.html">
-            
-                <a href="../安裝指南/安裝FTP.html">
-            
-                    
-                    安裝FTP
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.4" data-path="../安裝指南/安裝Grafana.html">
+        <li class="chapter " data-level="1.5.3" data-path="../安裝指南/安裝Grafana.html">
             
                 <a href="../安裝指南/安裝Grafana.html">
             
@@ -888,76 +901,166 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="windows-logman-&#x6548;&#x80FD;&#x6578;&#x64DA;&#x6536;&#x96C6;sop">Windows-Logman-&#x6548;&#x80FD;&#x6578;&#x64DA;&#x6536;&#x96C6;SOP</h3>
-<p>&#x5C07; WinLogPoc.zip &#x89E3;&#x58D3;&#x7E2E;&#x5230; C &#x69FD;&#x6839;&#x76EE;&#x9304;&#xFF08;C:\&#xFF09;&#xFF0C;&#x89E3;&#x58D3;&#x7E2E;&#x5F8C;&#x76EE;&#x9304;&#x7D50;&#x69CB;&#x5982;&#x4E0B;&#x5716;&#x6240;&#x793A;&#xFF0C;&#x65BC; C:\WinLogPoc &#x76EE;&#x9304;&#x4E0B;&#x5305;&#x542B; UPLOAD&#x3001;SENT &#x5169;&#x500B;&#x5B50;&#x76EE;&#x9304;&#xFF0C;&#x4EE5;&#x53CA; 2 &#x500B;&#x8173;&#x672C;&#x6A94;&#x6848;&#xFF1A;
-<img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_&#x76EE;&#x9304;&#x7D50;&#x69CB;.jpg" alt="&#x76EE;&#x9304;&#x7D50;&#x69CB;"></p>
-<h3 id="&#x7A0B;&#x5F0F;&#x57F7;&#x884C;&#x6B65;&#x9A5F;&#x8AAA;&#x660E;&#xFF1A;">&#x7A0B;&#x5F0F;&#x57F7;&#x884C;&#x6B65;&#x9A5F;&#x8AAA;&#x660E;&#xFF1A;</h3>
-<ol>
-<li><strong>&#x8ABF;&#x6574;&#x8173;&#x672C;&#x5167;&#x5BB9;</strong>&#xFF1A;&#x6839;&#x64DA;&#x4F3A;&#x670D;&#x5668;&#x74B0;&#x5883;&#x9700;&#x6C42;&#x8ABF;&#x6574;&#x53C3;&#x6578;&#xFF0C;&#x5982;&#x63A1;&#x96C6;&#x983B;&#x7387;&#x548C;&#x50B3;&#x9001;&#x8DEF;&#x5F91;&#x3002;</li>
-<li><strong>&#x6E2C;&#x8A66;&#x57F7;&#x884C;&#x8173;&#x672C;</strong>&#xFF1A;&#x624B;&#x52D5;&#x57F7;&#x884C;&#x8173;&#x672C;&#xFF0C;&#x6E2C;&#x8A66;&#x662F;&#x5426;&#x6B63;&#x5E38;&#x57F7;&#x884C;&#x548C;&#x7522;&#x751F;&#x65E5;&#x8A8C;&#x6A94;&#x6848;&#x3002;</li>
-<li><strong>&#x8A2D;&#x5B9A;&#x81EA;&#x52D5;&#x5316;&#x6392;&#x7A0B;</strong>&#xFF1A;&#x8173;&#x672C;&#x6E2C;&#x8A66;&#x7121;&#x8AA4;&#x5F8C;&#xFF0C;&#x8A2D;&#x5B9A;Windows&#x5DE5;&#x4F5C;&#x6392;&#x7A0B;&#x5668;&#x81EA;&#x52D5;&#x5316;&#x5B9A;&#x6642;&#x6536;&#x96C6;&#x3002;</li>
-</ol>
-<h3 id="step-1&#xFF1A;&#x8ABF;&#x6574;&#x8173;&#x672C;&#x5167;&#x5BB9;">Step 1&#xFF1A;&#x8ABF;&#x6574;&#x8173;&#x672C;&#x5167;&#x5BB9;</h3>
-<p><strong>&#x6548;&#x80FD;&#x6578;&#x64DA;&#x63A1;&#x96C6;&#x8173;&#x672C; createLog.cmd</strong></p>
-<p>&#x63A1;&#x96C6;&#x983B;&#x7387;&#xFF1A;<code>si 60</code> &#x4EE3;&#x8868;&#x6BCF; 60 &#x79D2;&#x63A1;&#x96C6;&#x4E00;&#x6B21;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x64DA;&#x5177;&#x9AD4;&#x9700;&#x6C42;&#x8ABF;&#x6574;&#x70BA; 30 &#x79D2;&#x6216; 15 &#x79D2;&#x3002;</p>
-<pre><code class="lang-shell">logman.exe stop MSPOC
-logman.exe delete MSPOC
-logman.exe create counter MSPOC -o c:\\WinLogPoc\\%COMPUTERNAME% -f csv -v mmddhhmm -c &quot;\\LogicalDisk(*)\\*&quot; &quot;\\Memory\\*&quot; &quot;\\Network Interface(*)\\*&quot; &quot;\\Paging File(*)\\*&quot; &quot;\\Processor(*)\\*&quot; &quot;\\Process(*)\\*&quot; -si 60
-logman.exe start MSPOC
+                                <h1 id="logman-&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;">Logman &#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x8AAA;&#x660E;</h1>
+<p>Logman &#x662F;&#x4E00;&#x6B3E; Windows &#x7CFB;&#x7D71;&#x81EA;&#x5E36;&#x7684;&#x6027;&#x80FD;&#x6578;&#x64DA;&#x6536;&#x96C6;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x6642;&#x6536;&#x96C6;&#x7CFB;&#x7D71;&#x7684;&#x5404;&#x7A2E;&#x6027;&#x80FD;&#x6307;&#x6A19;&#x4E26;&#x4FDD;&#x5B58;&#x70BA;&#x65E5;&#x8A8C;&#x6587;&#x4EF6;&#x3002;&#x6B64;&#x8AAA;&#x660E;&#x6587;&#x6A94;&#x5C07;&#x6307;&#x5C0E;&#x4F60;&#x5982;&#x4F55;&#x8A2D;&#x7F6E;&#x548C;&#x4F7F;&#x7528; Logman &#x9032;&#x884C;&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x3001;&#x50B3;&#x8F38;&#x548C;&#x7BA1;&#x7406;&#x3002;</p>
+<h2 id="1-&#x8A2D;&#x7F6E;-logman-&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x74B0;&#x5883;">1. &#x8A2D;&#x7F6E; Logman &#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x74B0;&#x5883;</h2>
+<h3 id="&#x76EE;&#x9304;&#x7D50;&#x69CB;">&#x76EE;&#x9304;&#x7D50;&#x69CB;</h3>
+<p>&#x9996;&#x5148;&#xFF0C;&#x78BA;&#x4FDD;&#x4F60;&#x7684;&#x76EE;&#x9304;&#x7D50;&#x69CB;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-plaintext">logman_collection/
+&#x251C;&#x2500;&#x2500; collectLog.bat
+&#x251C;&#x2500;&#x2500; createLog.cmd
+&#x251C;&#x2500;&#x2500; ftp-csv.txt (&#x5982;&#x4F7F;&#x7528;FTP&#x6642;&#x9700;&#x5275;&#x5EFA;)
+&#x251C;&#x2500;&#x2500; winscp-csv.txt (&#x5982;&#x4F7F;&#x7528;WinSCP&#x6642;&#x9700;&#x5275;&#x5EFA;)
+&#x251C;&#x2500;&#x2500; WinSCP/
+&#x2502;   &#x251C;&#x2500;&#x2500; WinSCP.com
+&#x2502;   &#x251C;&#x2500;&#x2500; WinSCP.exe
+&#x2502;   &#x2514;&#x2500;&#x2500; WinSCP.ini
+&#x251C;&#x2500;&#x2500; sent/
+&#x2514;&#x2500;&#x2500; backup/
 </code></pre>
-<p><strong>&#x6536;&#x96C6;&#x8207;&#x50B3;&#x9001;&#x65E5;&#x8A8C;&#x8173;&#x672C; collectLog.bat</strong></p>
-<p>&#x5C07;&#x6536;&#x96C6;&#x7684; csv &#x6A94;&#x4EE5; scp &#x65B9;&#x5F0F;&#x50B3;&#x9001;&#x5230;&#x5225;&#x53F0; server&#xFF0C;&#x82E5;&#x6A94;&#x6848;&#x53EA;&#x9700;&#x4FDD;&#x5B58;&#x5728;&#x672C;&#x5730;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x50B3;&#x9001;&#xFF0C;&#x8ACB;&#x5C07;&#x7B2C; 4-5 &#x884C;&#x76F4;&#x63A5;&#x79FB;&#x9664;&#x3002;</p>
-<pre><code class="lang-shell">logman.exe stop MSPOC
-move /Y C:\\WinLogPoc\\*.csv C:\\WinLogPoc\\UPLOAD
-logman.exe start MSPOC
-Powershell.exe &quot;scp -i C:\\Users\\Administrator\\.ssh\\bimap123.key &quot;C:\\WinLogPoc\\UPLOAD\\*.csv&quot; bimap@10.99.1.123:~/scp_logman&quot;
-move /Y c:\\WinLogPoc\\UPLOAD\\*.csv c:\\WinLogPoc\\SENT
+<h3 id="2-&#x5EFA;&#x7ACB;&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x548C;&#x7BA1;&#x7406;&#x8173;&#x672C;">2. &#x5EFA;&#x7ACB;&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x548C;&#x7BA1;&#x7406;&#x8173;&#x672C;</h3>
+<h4 id="createlogcmd">createLog.cmd</h4>
+<p>&#x8A72;&#x8173;&#x672C;&#x7528;&#x65BC;&#x5275;&#x5EFA;&#x548C;&#x555F;&#x52D5; Logman &#x4EFB;&#x52D9;&#xFF0C;&#x5B9A;&#x671F;&#x6536;&#x96C6;&#x7CFB;&#x7D71;&#x6027;&#x80FD;&#x6578;&#x64DA;&#x4E26;&#x4FDD;&#x5B58;&#x70BA; CSV &#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-cmd">logman.exe stop LogmanJob
+logman.exe delete LogmanJob
+logman.exe create counter LogmanJob -o c:\logman_collection\<span class="hljs-variable">%COMPUTERNAME%</span> -f csv -v mmddhhmm -c &quot;\Numa Node Memory\Total MBytes&quot; &quot;\System\*&quot; &quot;\LogicalDisk(*)\*&quot; &quot;\Memory\*&quot; &quot;\Network Interface(*)\*&quot; &quot;\Paging File(*)\*&quot; &quot;\Processor(*)\*&quot; -si <span class="hljs-number">60</span>
+logman.exe <span class="hljs-built_in">start</span> LogmanJob
 </code></pre>
-<h3 id="step-2&#xFF1A;&#x6E2C;&#x8A66;&#x57F7;&#x884C;&#x8173;&#x672C;">Step 2&#xFF1A;&#x6E2C;&#x8A66;&#x57F7;&#x884C;&#x8173;&#x672C;</h3>
-<ol>
-<li><p><strong>&#x4EE5;&#x5DE5;&#x4F5C;&#x7BA1;&#x7406;&#x54E1;&#x8EAB;&#x4EFD;&#x958B;&#x555F; Power Shell</strong>&#xFF0C;&#x5F8C;&#x7E8C;&#x64CD;&#x4F5C;&#x6307;&#x4EE4;&#x8ACB;&#x5728; Power Shell &#x8996;&#x7A97;&#x4E2D;&#x8F38;&#x5165;&#x57F7;&#x884C;&#x3002;
-<img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_&#x958B;&#x555F;PowerShell.jpg" alt="&#x958B;&#x555F; Power Shell"></p>
-</li>
-<li><p><strong>&#x79FB;&#x52D5;&#x5230;&#x8173;&#x672C;&#x6240;&#x5728;&#x76EE;&#x9304;&#xFF0C;&#x4E26;&#x57F7;&#x884C; createLog.cmd</strong>&#xFF1A;</p>
-<pre><code class="lang-shell">cd C:\\WinLogPoc
-.\\createLog.cmd
+<h4 id="collectlogbat">collectLog.bat</h4>
+<p>&#x8A72;&#x8173;&#x672C;&#x8CA0;&#x8CAC;&#x505C;&#x6B62; Logman &#x4EFB;&#x52D9;&#x3001;&#x79FB;&#x52D5;&#x5DF2;&#x6536;&#x96C6;&#x7684;&#x65E5;&#x8A8C;&#x6587;&#x4EF6;&#x5230; <code>sent</code> &#x8CC7;&#x6599;&#x593E;&#x3001;&#x91CD;&#x65B0;&#x555F;&#x52D5; Logman &#x4EFB;&#x52D9;&#x3001;&#x4F7F;&#x7528; SCP &#x6216; FTP &#x4E0A;&#x50B3;&#x65E5;&#x8A8C;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x522A;&#x9664;&#x904E;&#x671F;&#x65E5;&#x8A8C;&#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-bat">@<span class="hljs-built_in">echo</span> off
+<span class="hljs-built_in">setlocal</span> enabledelayedexpansion
+
+:: &#x8A2D;&#x5B9A;&#x8B8A;&#x6578;
+<span class="hljs-built_in">set</span> LOG_DIR=C:\logman_collection
+<span class="hljs-built_in">set</span> SENT_DIR=<span class="hljs-variable">%LOG_DIR%</span>\sent
+<span class="hljs-built_in">set</span> BACKUP_DIR=<span class="hljs-variable">%LOG_DIR%</span>\backup
+
+:: &#x505C;&#x6B62; Logman &#x4EFB;&#x52D9;&#xFF0C;&#x5C07; logman &#x524D;&#x4E00;&#x5C0F;&#x6642;&#x6536;&#x96C6;&#x7684;&#x6A94;&#x6848; &#x79FB;&#x5230; sent &#x8CC7;&#x6599;&#x593E;&#xFF0C;&#x518D;&#x91CD;&#x65B0;&#x555F;&#x52D5;&#x6536;&#x96C6;
+logman.exe stop LogmanJob           
+<span class="hljs-built_in">move</span> /Y <span class="hljs-variable">%LOG_DIR%</span>\*.csv <span class="hljs-variable">%SENT_DIR%</span>
+logman.exe <span class="hljs-built_in">start</span> LogmanJob  
+
+:: [[&#x4F7F;&#x7528;WinSCP&#x8ACB;&#x5C07;&#x4E0B;&#x884C;&#x958B;&#x982D; :: &#x79FB;&#x9664;]]
+::(<span class="hljs-variable">%LOG_DIR%</span>\WinSCP\WinSCP.com /script=&quot;<span class="hljs-variable">%LOG_DIR%</span>\winscp-csv.txt&quot;) &amp;&amp; (<span class="hljs-built_in">move</span> /Y <span class="hljs-variable">%SENT_DIR%</span>\*.csv <span class="hljs-variable">%BACKUP_DIR%</span>) || (<span class="hljs-built_in">cls</span>) &amp;&amp; ( <span class="hljs-built_in">echo</span> File <span class="hljs-keyword">not</span> uploaded. Try later.) 
+
+:: [[&#x4F7F;&#x7528;FTP&#x8ACB;&#x5C07;&#x4E0B;&#x884C;&#x958B;&#x982D; :: &#x79FB;&#x9664;]]
+::(ftp -s:<span class="hljs-variable">%LOG_DIR%</span>\ftp-csv.txt | <span class="hljs-built_in">find</span> /I &quot;complete&quot; &gt;<span class="hljs-built_in">nul</span>) &amp;&amp; (<span class="hljs-built_in">move</span> /Y <span class="hljs-variable">%SENT_DIR%</span>\*.csv <span class="hljs-variable">%BACKUP_DIR%</span>) || (<span class="hljs-built_in">cls</span>) &amp;&amp; (<span class="hljs-built_in">echo</span> File <span class="hljs-keyword">not</span> uploaded. Try later.)
+
+:: &#x522A;&#x9664; n &#x5929;&#x524D;&#x7684;&#x820A;&#x6A94;&#x6848;
+FORFILES /P <span class="hljs-variable">%BACKUP_DIR%</span> /M *.csv /D -<span class="hljs-number">14</span> /C &quot;<span class="hljs-built_in">cmd</span> /c <span class="hljs-built_in">Del</span> @<span class="hljs-built_in">PATH</span>&quot;
+
+<span class="hljs-built_in">endlocal</span>
 </code></pre>
-<p><img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_&#x57F7;&#x884C;createLog.cmd.jpg" alt="&#x57F7;&#x884C; createLog.cmd"></p>
-</li>
-<li><p><strong>&#x8F38;&#x5165; ls &#x5217;&#x51FA;&#x6240;&#x5728;&#x76EE;&#x9304;&#x7684;&#x6A94;&#x6848;&#x6E05;&#x55AE;&#xFF0C;&#x6703;&#x65B0;&#x7522;&#x751F;&#x4E00;&#x500B; csv &#x6A94;&#x6848;</strong>&#xFF1A;
-<img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_&#x6A94;&#x6848;&#x6E05;&#x55AE;.jpg" alt="&#x6A94;&#x6848;&#x6E05;&#x55AE;"></p>
-</li>
-</ol>
-<h3 id="step-3&#xFF1A;&#x8A2D;&#x5B9A;&#x81EA;&#x52D5;&#x5316;&#x6392;&#x7A0B;">Step 3&#xFF1A;&#x8A2D;&#x5B9A;&#x81EA;&#x52D5;&#x5316;&#x6392;&#x7A0B;</h3>
-<ol>
-<li><p><strong>schtasks &#x8A2D;&#x5B9A;&#x5B9A;&#x671F;&#x57F7;&#x884C; collectLog.bat</strong></p>
+<h3 id="3-&#x8A2D;&#x7F6E;-winscp-&#x6216;-ftp-&#x4E0A;&#x50B3;&#x914D;&#x7F6E;">3. &#x8A2D;&#x7F6E; WinSCP &#x6216; FTP &#x4E0A;&#x50B3;&#x914D;&#x7F6E;</h3>
+<h4 id="winscp-&#x914D;&#x7F6E;&#x6587;&#x4EF6;">WinSCP &#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<p>&#x5982;&#x9700;&#x4F7F;&#x7528; WinSCP &#x4E0A;&#x50B3;&#xFF0C;&#x8ACB;&#x5275;&#x5EFA; <code>winscp-csv.txt</code> &#x6587;&#x4EF6;&#xFF0C;&#x4E26;&#x6309;&#x5982;&#x4E0B;&#x683C;&#x5F0F;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-plaintext">open scp://bimap:1qaz2wsx@10.99.1.106
+cd /home/sftpuser/master
+put C:\logman_collection\sent\*.csv
+exit
+</code></pre>
+<h5 id="&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x53C3;&#x6578;">&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x53C3;&#x6578;</h5>
 <ul>
-<li>&#x6BCF;&#x5929;&#x555F;&#x52D5;&#x4E00;&#x6B21; collectLog.bat&#xFF1A;<pre><code class="lang-shell">schtasks.exe /create /sc daily /st 00:00 /tn &quot;WinLogPocJob&quot; /tr c:\\WinLogPoc\\collectLog.bat
+<li><code>bimap</code>: &#x66FF;&#x63DB;&#x70BA;&#x5BE6;&#x969B;&#x7684;&#x9060;&#x7AEF;&#x7528;&#x6236;&#x540D;&#x3002;</li>
+<li><code>1qaz2wsx</code>: &#x66FF;&#x63DB;&#x70BA;&#x5BE6;&#x969B;&#x7684;&#x9060;&#x7AEF;&#x7528;&#x6236;&#x5BC6;&#x78BC;&#x3002;</li>
+<li><code>10.99.1.106</code>: &#x66FF;&#x63DB;&#x70BA;&#x5BE6;&#x969B;&#x7684;&#x9060;&#x7AEF;&#x4E3B;&#x6A5F; IP &#x5730;&#x5740;&#x3002;</li>
+<li><code>/home/sftpuser/master</code>: &#x66FF;&#x63DB;&#x70BA;&#x5BE6;&#x969B;&#x7684;&#x9060;&#x7AEF;&#x76EE;&#x9304;&#x8DEF;&#x5F91;&#x3002;</li>
+</ul>
+<h4 id="ftp-&#x914D;&#x7F6E;&#x6587;&#x4EF6;">FTP &#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<p>&#x5982;&#x9700;&#x4F7F;&#x7528; FTP &#x4E0A;&#x50B3;&#xFF0C;&#x8ACB;&#x5275;&#x5EFA; <code>ftp-csv.txt</code> &#x6587;&#x4EF6;&#xFF0C;&#x4E26;&#x6309;&#x5982;&#x4E0B;&#x683C;&#x5F0F;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-plaintext">open 10.99.1.106
+sftpuser
+1qaz2wsx
+prompt
+bin
+quote pasv
+lcd c:\logman_collection\sent
+mput *.csv
+bye
 </code></pre>
-</li>
-<li>&#x6BCF;&#x5C0F;&#x6642;&#x555F;&#x52D5;&#x4E00;&#x6B21; collectLog.bat&#xFF1A;<pre><code class="lang-shell">schtasks.exe /create /sc hourly /st 00:00 /tn &quot;WinLogPocJob&quot; /tr c:\\WinLogPoc\\collectLog.bat
-</code></pre>
-<img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_&#x6392;&#x7A0B;&#x8A2D;&#x5B9A;.jpg" alt="&#x6392;&#x7A0B;&#x8A2D;&#x5B9A;"></li>
+<h5 id="&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x53C3;&#x6578;">&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x53C3;&#x6578;</h5>
+<ul>
+<li><code>sftpuser</code>: &#x66FF;&#x63DB;&#x70BA;&#x5BE6;&#x969B;&#x7684; FTP &#x7528;&#x6236;&#x540D;&#x3002;</li>
+<li><code>1qaz2wsx</code>: &#x66FF;&#x63DB;&#x70BA;&#x5BE6;&#x969B;&#x7684; FTP &#x7528;&#x6236;&#x5BC6;&#x78BC;&#x3002;</li>
+<li><code>10.99.1.106</code>: &#x66FF;&#x63DB;&#x70BA;&#x5BE6;&#x969B;&#x7684; FTP &#x4F3A;&#x670D;&#x5668; IP &#x5730;&#x5740;&#x3002;</li>
+</ul>
+<h3 id="4-&#x6E2C;&#x8A66;&#x548C;&#x9A57;&#x8B49;">4. &#x6E2C;&#x8A66;&#x548C;&#x9A57;&#x8B49;</h3>
+<h4 id="&#x624B;&#x52D5;&#x6E2C;&#x8A66;&#x8173;&#x672C;">&#x624B;&#x52D5;&#x6E2C;&#x8A66;&#x8173;&#x672C;</h4>
+<ol>
+<li><p><strong>&#x4EE5;&#x7BA1;&#x7406;&#x54E1;&#x8EAB;&#x4EFD;&#x904B;&#x884C; PowerShell &#x6216;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x5B57;&#x5143;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x6309; <code>Win + X</code>&#xFF0C;&#x9078;&#x64C7; &quot;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x5B57;&#x5143; (&#x7BA1;&#x7406;&#x54E1;)&quot; &#x6216; &quot;Windows PowerShell (&#x7BA1;&#x7406;&#x54E1;)&quot;&#x3002;</li>
 </ul>
 </li>
-<li><p><strong>&#x78BA;&#x8A8D;&#x4EFB;&#x52D9;&#x662F;&#x5426;&#x6DFB;&#x52A0;&#x6210;&#x529F;</strong>&#xFF1A;</p>
-<pre><code class="lang-shell">schtasks.exe /query /tn &quot;WinLogPocJob&quot;
+<li><p><strong>&#x79FB;&#x52D5;&#x5230;&#x8173;&#x672C;&#x6240;&#x5728;&#x76EE;&#x9304;</strong>&#xFF1A;</p>
+<pre><code class="lang-shell">cd C:\logman_collection
 </code></pre>
-<p><img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_&#x78BA;&#x8A8D;&#x4EFB;&#x52D9;.jpg" alt="&#x78BA;&#x8A8D;&#x4EFB;&#x52D9;"></p>
+</li>
+<li><p><strong>&#x904B;&#x884C; <code>createLog.cmd</code> &#x8173;&#x672C;</strong>&#xFF1A;</p>
+<pre><code class="lang-shell">.\createLog.cmd
+</code></pre>
+</li>
+<li><p><strong>&#x6AA2;&#x67E5;&#x662F;&#x5426;&#x751F;&#x6210; CSV &#x6587;&#x4EF6;</strong>&#xFF1A;</p>
+<pre><code class="lang-shell">dir
+</code></pre>
+</li>
+<li><p><strong>&#x904B;&#x884C; <code>collectLog.bat</code> &#x8173;&#x672C;&#x9032;&#x884C;&#x65E5;&#x8A8C;&#x6536;&#x96C6;&#x548C;&#x4E0A;&#x50B3;&#x6E2C;&#x8A66;</strong>&#xFF1A;</p>
+<pre><code class="lang-shell">.\collectLog.bat
+</code></pre>
 </li>
 </ol>
+<h3 id="5-&#x8A2D;&#x7F6E;&#x81EA;&#x52D5;&#x5316;&#x6392;&#x7A0B;">5. &#x8A2D;&#x7F6E;&#x81EA;&#x52D5;&#x5316;&#x6392;&#x7A0B;</h3>
+<h4 id="&#x4F7F;&#x7528;-schtasks-&#x8A2D;&#x5B9A;&#x5B9A;&#x671F;&#x4EFB;&#x52D9;">&#x4F7F;&#x7528; schtasks &#x8A2D;&#x5B9A;&#x5B9A;&#x671F;&#x4EFB;&#x52D9;</h4>
+<ol>
+<li><p><strong>&#x6BCF;&#x5C0F;&#x6642;&#x904B;&#x884C;&#x4E00;&#x6B21; <code>collectLog.bat</code></strong>&#xFF1A;</p>
+<pre><code class="lang-shell">schtasks.exe /create /RU &quot;NT AUTHORITY\SYSTEM&quot; /sc HOURLY /st 00:00 /tn &quot;LogmanJob&quot; /tr C:\logman_collection\collectLog.bat
+</code></pre>
+</li>
+<li><p><strong>&#x6BCF;&#x5929;&#x904B;&#x884C;&#x4E00;&#x6B21; <code>collectLog.bat</code></strong>&#xFF1A;</p>
+<pre><code class="lang-shell">schtasks.exe /create /RU &quot;NT AUTHORITY\SYSTEM&quot; /sc DAILY /st 00:00 /tn &quot;LogmanJob&quot; /tr C:\logman_collection\collectLog.bat
+</code></pre>
+</li>
+</ol>
+<h3 id="6-&#x9A57;&#x8B49;&#x4EFB;&#x52D9;&#x8A2D;&#x7F6E;">6. &#x9A57;&#x8B49;&#x4EFB;&#x52D9;&#x8A2D;&#x7F6E;</h3>
+<p>&#x78BA;&#x8A8D;&#x4EFB;&#x52D9;&#x662F;&#x5426;&#x6210;&#x529F;&#x6DFB;&#x52A0;&#xFF1A;</p>
+<pre><code class="lang-shell">schtasks.exe /query /tn &quot;LogmanJob&quot;
+</code></pre>
 <h3 id="&#x65E5;&#x8A8C;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#x8AAA;&#x660E;">&#x65E5;&#x8A8C;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#x8AAA;&#x660E;</h3>
 <ol>
-<li><p>&#x6BCF;&#x500B;&#x6574;&#x9EDE;&#x6703;&#x5C07;&#x4E0A;&#x4E00;&#x500B;&#x5C0F;&#x6642;&#x6536;&#x96C6;&#x7684;&#x65E5;&#x8A8C;&#x79FB;&#x52D5;&#x5230; UPLOAD &#x8CC7;&#x6599;&#x593E;&#x4E2D;&#x7B49;&#x5F85;&#x50B3;&#x9001;&#x3002;
-<img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_UPLOAD&#x8CC7;&#x6599;&#x593E;.jpg" alt="UPLOAD &#x8CC7;&#x6599;&#x593E;"></p>
-</li>
-<li><p>&#x50B3;&#x9001;&#x6210;&#x529F;&#x5F8C;&#x6703;&#x79FB;&#x52D5;&#x5230; SENT &#x8CC7;&#x6599;&#x593E;&#x4E2D;&#x5B58;&#x653E;&#xFF0C;&#x4E00;&#x5929;&#x6703;&#x7522;&#x751F; 24 &#x500B; csv &#x6A94;&#x6848;&#xFF0C;&#x82E5;&#x50B3;&#x9001;&#x5931;&#x6557;&#x6703;&#x4FDD;&#x7559;&#x5728; UPLOAD &#x8CC7;&#x6599;&#x593E;&#x7B49;&#x5F85;&#x4E0B;&#x4E00;&#x6B21;&#x50B3;&#x9001;&#x3002;
-<img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_SENT&#x8CC7;&#x6599;&#x593E;.jpg" alt="SENT &#x8CC7;&#x6599;&#x593E;"></p>
-</li>
-<li><p>&#x91CD;&#x65B0;&#x555F;&#x52D5;&#x6536;&#x96C6;&#x7684;&#x65E5;&#x8A8C;&#x6703;&#x5728; WinLogPoc &#x8CC7;&#x6599;&#x593E;&#x91CD;&#x65B0;&#x7522;&#x751F;&#x3002;
-<img src="../images/&#x6578;&#x64DA;&#x6536;&#x96C6;/Logman_WinLogPoc&#x8CC7;&#x6599;&#x593E;.jpg" alt="WinLogPoc &#x8CC7;&#x6599;&#x593E;"></p>
-</li>
+<li>&#x6BCF;&#x500B;&#x6574;&#x9EDE;&#x6703;&#x5C07;&#x4E0A;&#x4E00;&#x500B;&#x5C0F;&#x6642;&#x6536;&#x96C6;&#x7684;&#x65E5;&#x8A8C;&#x79FB;&#x52D5;&#x5230; <code>sent</code> &#x8CC7;&#x6599;&#x593E;&#x4E2D;&#x7B49;&#x5F85;&#x50B3;&#x9001;&#x3002;</li>
+<li>&#x50B3;&#x9001;&#x6210;&#x529F;&#x5F8C;&#x6703;&#x79FB;&#x52D5;&#x5230; <code>backup</code> &#x8CC7;&#x6599;&#x593E;&#x4E2D;&#x5B58;&#x653E;&#xFF0C;&#x4E00;&#x5929;&#x6703;&#x7522;&#x751F; 24 &#x500B; CSV &#x6A94;&#x6848;&#xFF0C;&#x82E5;&#x50B3;&#x9001;&#x5931;&#x6557;&#x6703;&#x4FDD;&#x7559;&#x5728; <code>sent</code> &#x8CC7;&#x6599;&#x593E;&#x7B49;&#x5F85;&#x4E0B;&#x4E00;&#x6B21;&#x50B3;&#x9001;&#x3002;</li>
+<li>&#x91CD;&#x65B0;&#x555F;&#x52D5;&#x6536;&#x96C6;&#x7684;&#x65E5;&#x8A8C;&#x6703;&#x5728; <code>logman_collection</code> &#x8CC7;&#x6599;&#x593E;&#x91CD;&#x65B0;&#x7522;&#x751F;&#x3002;</li>
 </ol>
+<h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9805;">&#x6CE8;&#x610F;&#x4E8B;&#x9805;</h3>
+<h4 id="&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;-winscp-&#x6642;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9805;">&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528; WinSCP &#x6642;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9805;</h4>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x57F7;&#x884C; WinSCP &#x8173;&#x672C;&#x6642;&#xFF0C;&#x6703;&#x63D0;&#x793A;&#x662F;&#x5426;&#x4FE1;&#x4EFB;&#x9060;&#x7AEF;&#x4E3B;&#x6A5F;&#x7684;&#x6307;&#x7D0B;&#xFF0C;&#x8F38;&#x5165; &quot;Y&quot; &#x4EE5;&#x4FE1;&#x4EFB;&#x4E26;&#x6DFB;&#x52A0;&#x4E3B;&#x6A5F;&#x9375;&#x5230;&#x7DE9;&#x5B58;&#xFF1A;</p>
+<pre><code class="lang-plaintext">PS C:\logman_collection&gt; .\collectLog.bat
+The command completed successfully.
+C:\logman_collection\WIN-J8S43F1214B_08071427.csv
+        1 file(s) moved.
+The command completed successfully.
+Searching for host...
+Connecting to host...
+Authenticating...
+Continue connecting to an unknown server and add its host key to a cache?
+The server&apos;s host key was not found in the cache. You have no guarantee that the server is the computer you think it is.
+The server&apos;s ssh-ed25519 key fingerprint is:
+ssh-ed25519 256 0c:f9:35:4e:ad:e5:62:d2:92:cb:3d:5b:f0:22:ea:2b
+If you trust this host, press Yes. To connect without adding host key to the cache, press No. To abandon the connection press Cancel.
+In scripting, you should use a -hostkey switch to configure the expected host key.
+(Y)es, (N)o, C(a)ncel (5 s), (C)opy Key: Yes
+Using username &quot;bimap&quot;.
+Authenticating with pre-entered password.
+Authenticated.
+Starting the session...
+Session started.
+Active session: [1] bimap@10.99.1.106
+/home/sftpuser/master
+WIN-J8S43F1214B_08071409. |          58 KB |    0.0 KB/s | binary | 100%
+C:\logman_collection\sent\WIN-J8S43F1214B_08071427.csv
+        1 file(s) moved.
+</code></pre>
 
                                 
                                 </section>
@@ -985,12 +1088,12 @@ move /Y c:\\WinLogPoc\\UPLOAD\\*.csv c:\\WinLogPoc\\SENT
 
             
                 
-                <a href="sysstat.html" class="navigation navigation-prev " aria-label="Previous page: sysstat">
+                <a href="設定SCP.html" class="navigation navigation-prev " aria-label="Previous page: 設定SCP">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="nmon.html" class="navigation navigation-next " aria-label="Next page: nmon">
+                <a href="nmon.html" class="navigation navigation-next " aria-label="Next page: Nmon">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1001,7 +1104,7 @@ move /Y c:\\WinLogPoc\\UPLOAD\\*.csv c:\\WinLogPoc\\SENT
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"logman","level":"1.3.2","depth":2,"next":{"title":"nmon","level":"1.3.3","depth":2,"path":"guide/數據收集/nmon.md","ref":"guide/數據收集/nmon.md","articles":[]},"previous":{"title":"sysstat","level":"1.3.1","depth":2,"path":"guide/數據收集/sysstat.md","ref":"guide/數據收集/sysstat.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/數據收集/logman.md","mtime":"2024-08-06T05:54:08.282Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-06T05:54:57.405Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"logman","level":"1.3.3","depth":2,"next":{"title":"Nmon","level":"1.3.4","depth":2,"path":"guide/數據收集/nmon.md","ref":"guide/數據收集/nmon.md","articles":[]},"previous":{"title":"設定SCP","level":"1.3.2","depth":2,"path":"guide/數據收集/設定SCP.md","ref":"guide/數據收集/設定SCP.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guide/數據收集/logman.md","mtime":"2024-08-07T07:17:33.594Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-07T07:22:14.877Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
